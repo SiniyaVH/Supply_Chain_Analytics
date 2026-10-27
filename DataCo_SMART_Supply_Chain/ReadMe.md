@@ -346,21 +346,16 @@ The repository can be organized as follows:
 
 ```text
 supply-chain-analytics/
+DataCo_SMART_Supply_Chain/
 │
 ├── data/
+│   └── DataCoSupplyChainDataset.csv
+│   └── tokenized_access_logs.csv
 │   └── README.md
-│
 ├── notebooks/
-│   ├── 01_data_understanding_and_quality_audit.ipynb
-│   ├── 02_data_cleaning_and_feature_engineering.ipynb
-│   └── 03_eda_and_supply_chain_metrics.ipynb
-│
-├── outputs/
-│   ├── charts/
-│   └── summary_tables/
-│
-├── README.md
-└── requirements.txt
+│   ├── Project_proposal_phase1.ipynb
+├── Supply_Chain_Analytics_SRS_5_Pages
+└── README.md
 ```
 
 ### Folder Descriptions
@@ -396,27 +391,9 @@ git clone <https://github.com/SiniyaVH/Supply_Chain_Analytics/DataCo_SMART_Suppl
 cd supply-chain-analytics
 ```
 
-### Step 3: Create a Virtual Environment (Recommended)
-
-```bash
-python -m venv .venv
-```
-
-Activate the environment on Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-On macOS or Linux:
-
-```bash
-source .venv/bin/activate
-```
-
 ### Step 4: Install Dependencies
 
-Create a `requirements.txt` file containing:
+Create a file containing:
 
 ```text
 pandas
