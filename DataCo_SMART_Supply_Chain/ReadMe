@@ -430,7 +430,7 @@ jupyter
 Install the libraries:
 
 ```bash
-pip install -r https://github.com/SiniyaVH/Supply_Chain_Analytics/edit/main/DataCo_SMART_Supply_Chain
+pip install -r https://github.com/SiniyaVH/Supply_Chain_Analytics/tree/main/DataCo_SMART_Supply_Chain
 ```
 
 ### Step 5: Download the Dataset
