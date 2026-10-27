@@ -73,12 +73,11 @@ The dataset is intended to support analysis of supply chain and transactional op
 | ----------------- | ------------------------------------------------------------------------------------ |
 | Dataset name      | DataCo SMART Supply Chain                                                            |
 | Source            | Mendeley Data                                                                        |
-| File format       | Verify the downloaded file format                                                    |
-| Number of rows    | To be recorded after loading the dataset                                             |
-| Number of columns | To be recorded after loading the dataset                                             |
-| Data types        | To be identified during data inspection                                              |
-| Data quality      | To be assessed during preprocessing                                                  |
-| Analytical scope  | Orders, sales, products, geography, and shipping where supported by available fields |
+| File format       | csv                                                                                  |
+| Number of rows    | 180519 + 469977                                                                     |
+| Number of columns | 53 + 8                                                                               |
+| Data types        | int64, Str, float64                                                                  |              
+| Domain            | Supply Chain                                                                         |
 
 ### Important Dataset Considerations
 
