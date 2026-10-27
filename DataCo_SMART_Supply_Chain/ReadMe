@@ -1,1 +1,533 @@
+# 📦 Supply Chain Analytics Using Python
+
+### Inventory, Logistics Performance, and Demand Analysis
+
+**Project Type:** Data Analytics Portfolio Project
+**Domain:** Supply Chain & Logistics Analytics
+**Programming Language:** Python
+**Dataset:** DataCo SMART Supply Chain
+**Project Date:** October 2026
+
+---
+
+## 📌 1. Project Overview
+
+Supply chain management involves coordinating orders, products, customers, shipping operations, and deliveries. Analyzing supply chain data can help organizations understand operational performance, identify inefficiencies, and make data-driven decisions.
+
+This project focuses on analyzing the **DataCo SMART Supply Chain dataset** using Python and its data analysis libraries.
+
+The project follows an end-to-end data analytics workflow, including data understanding, data quality assessment, data cleaning, feature engineering, exploratory data analysis (EDA), statistical analysis, visualization, and business recommendations.
+
+The analysis aims to identify patterns in order activity, sales, product performance, geographical demand, and shipping operations using the fields available in the dataset.
+
+The project is designed as a practical portfolio project demonstrating Python-based data analytics skills.
+
+## 🎯 2. Project Objectives
+
+The main objectives are to:
+
+* Understand the structure and quality of the supply chain dataset.
+* Identify and handle missing values, duplicate records, inconsistent data types, and data-quality issues.
+* Perform feature engineering to create useful analytical variables.
+* Analyze order volumes, quantities, and sales trends.
+* Examine product category and customer segment performance.
+* Investigate shipping duration and delivery performance where the required fields are available.
+* Explore geographical patterns in orders and sales.
+* Apply descriptive statistics and correlation analysis to investigate relationships between variables.
+* Create meaningful visualizations to communicate analytical findings.
+* Develop evidence-based recommendations for improving supply chain operations.
+
+## 🏢 3. Business Problem
+
+Supply chain operations generate data across multiple activities, including customer orders, product sales, shipping, and delivery.
+
+However, raw operational data may contain missing values, inconsistent records, unusual observations, and relationships that are difficult to identify without systematic analysis.
+
+Organizations need to understand questions such as:
+
+* Which product categories generate the highest recorded sales?
+* How do order quantities vary across products and geographical regions?
+* How does order activity change over time?
+* How do shipping durations differ across shipping modes?
+* Which regions or product categories show different delivery-performance patterns?
+* What data-quality issues could affect the reliability of supply chain reporting?
+
+This project uses Python-based data analytics to investigate these questions and translate the results into understandable business insights.
+
+The final conclusions will depend on the actual fields, quality, and coverage of the downloaded dataset.
+
+## 📂 4. Dataset Information
+
+**Dataset Name:** DataCo SMART Supply Chain for Big Data Analysis
+
+**Source:** Mendeley Data
+
+**Dataset Link:**
+https://data.mendeley.com/datasets/8gx2fvg2k6/5
+
+The dataset is intended to support analysis of supply chain and transactional operations. The exact structure, column definitions, and available measures will be verified after downloading the selected dataset version.
+
+### Dataset Information to Document
+
+| Attribute         | Description                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| Dataset name      | DataCo SMART Supply Chain                                                            |
+| Source            | Mendeley Data                                                                        |
+| File format       | Verify the downloaded file format                                                    |
+| Number of rows    | To be recorded after loading the dataset                                             |
+| Number of columns | To be recorded after loading the dataset                                             |
+| Data types        | To be identified during data inspection                                              |
+| Data quality      | To be assessed during preprocessing                                                  |
+| Analytical scope  | Orders, sales, products, geography, and shipping where supported by available fields |
+
+### Important Dataset Considerations
+
+Before starting the analysis:
+
+* Inspect the actual column names and available data dictionary.
+* Verify whether each row represents an order, order item, or another transaction record.
+* Check the availability and validity of date, sales, quantity, and delivery-related fields.
+* Confirm the meaning of delivery-status and late-delivery-risk fields.
+* Verify whether financial values are recorded at order level or transaction-line level.
+* Determine whether the dataset contains sufficient historical coverage for time-based analysis.
+
+**Note:** Inventory optimization, actual stockout analysis, date-based on-time delivery calculations, and shipping cost variance require specific fields. These analyses will only be performed if the necessary data is available.
+
+## 🛠️ 5. Technologies and Libraries
+
+The project uses a Python-based analytical workflow.
+
+| Technology       | Purpose                                                        |
+| ---------------- | -------------------------------------------------------------- |
+| Python           | Primary programming language                                   |
+| Pandas           | Data loading, cleaning, transformation, grouping, and analysis |
+| NumPy            | Numerical operations and statistical calculations              |
+| Matplotlib       | Data visualization                                             |
+| Seaborn          | Statistical and comparative visualizations                     |
+| Jupyter Notebook | Interactive analysis and documentation                         |
+| Git and GitHub   | Version control and portfolio presentation                     |
+
+### Core Project Scope
+
+The project focuses on:
+
+* Data cleaning and preprocessing
+* Feature engineering
+* Exploratory Data Analysis
+* Descriptive and statistical analysis
+* Data visualization
+* Business insights and recommendations
+
+Machine learning and predictive demand forecasting are outside the core project scope.
+
+## 🔄 6. Project Workflow
+
+The project follows these analytical stages.
+
+### Step 1: Data Loading
+
+* Import the required Python libraries.
+* Load the downloaded dataset into a Pandas DataFrame.
+* Verify that the file has loaded correctly.
+* Inspect the first and last few records.
+
+### Step 2: Data Understanding
+
+* Examine the number of rows and columns.
+* Review column names and data types.
+* Identify numerical and categorical variables.
+* Understand the meaning of important fields.
+* Check the granularity of the records.
+
+### Step 3: Data Quality Assessment
+
+* Calculate missing-value counts and percentages.
+* Identify duplicate rows and investigate duplicate identifiers.
+* Check inconsistent data types.
+* Validate date fields.
+* Examine unusual numerical values and potential outliers.
+* Document data-quality issues before applying cleaning rules.
+
+### Step 4: Data Cleaning and Preprocessing
+
+* Handle missing values using justified methods.
+* Investigate and address duplicate records where appropriate.
+* Convert columns to suitable data types.
+* Standardize inconsistent categorical values.
+* Validate numerical and date fields.
+* Preserve the original dataset and apply cleaning rules to a working copy.
+
+### Step 5: Feature Engineering
+
+Create useful analytical features when the required source fields are available.
+
+Potential features include:
+
+* Order year, month, quarter, and day of week.
+* Order-to-ship lead time.
+* Order cycle time.
+* Shipping delay.
+* Daily or monthly order quantities.
+* Aggregated sales and order metrics.
+
+All derived variables will be documented, and invalid or unsupported calculations will be excluded.
+
+### Step 6: Exploratory Data Analysis
+
+Explore the dataset using statistical summaries and visualizations.
+
+The analysis will investigate order activity, sales patterns, product categories, geographical differences, shipping performance, and relationships between numerical variables.
+
+### Step 7: Business Insights
+
+* Summarize the patterns identified during analysis.
+* Explain relevant differences across products, regions, and shipping modes.
+* Identify data-quality limitations that affect interpretation.
+* Develop recommendations supported by the analytical evidence.
+
+### Step 8: Documentation
+
+* Organize the analysis in Jupyter Notebook.
+* Add explanations and interpretations to important charts.
+* Document assumptions, metric definitions, and limitations.
+* Prepare the final GitHub README and project report.
+
+## 📊 7. Exploratory Data Analysis
+
+The following analyses are planned, subject to the availability and suitability of the corresponding fields.
+
+### 7.1 Univariate Analysis
+
+Examine individual variables to understand their distributions and identify unusual patterns.
+
+Potential variables:
+
+* Sales
+* Order quantities
+* Discounts
+* Order benefits
+* Shipping duration
+* Shipping delay
+* Product categories
+* Shipping modes
+
+**Possible visualizations:** Histograms, box plots, count plots, and bar charts.
+
+### 7.2 Sales and Product Analysis
+
+Investigate sales and recorded quantities across products and product categories.
+
+Questions include:
+
+* Which product categories have the highest recorded sales?
+* How are order quantities distributed across categories?
+* How do sales vary across customer segments?
+* What patterns appear in the available order-benefit and discount fields?
+
+**Possible visualizations:** Bar charts, grouped summaries, and box plots.
+
+### 7.3 Geographical Analysis
+
+Analyze orders, quantities, and sales across available geographical fields.
+
+Questions include:
+
+* How is order activity distributed across countries or regions?
+* Which geographical areas have relatively high recorded sales?
+* How do product and order patterns vary across regions?
+
+**Possible visualizations:** Bar charts and comparative plots.
+
+### 7.4 Shipping and Delivery Analysis
+
+Examine shipping operations using the available shipping-related fields.
+
+Questions include:
+
+* How does shipping duration vary across shipping modes?
+* What differences exist in available delivery outcomes across regions?
+* Are there records with unusually long shipping durations?
+* What patterns appear in delivery-status or late-risk fields?
+
+**Possible visualizations:** Box plots, violin plots, and bar charts.
+
+Actual on-time delivery rates will only be calculated if the required delivery information and a defensible on-time definition are available.
+
+### 7.5 Time-Based Analysis
+
+Analyze order and sales activity over time when valid transaction dates are available.
+
+Potential analyses include:
+
+* Daily order volume
+* Daily order quantities
+* Monthly sales trends
+* Changes in shipping performance over time
+
+**Possible visualizations:** Line charts and time-based summary plots.
+
+Seasonality will only be discussed if the dataset provides sufficient historical coverage to support the conclusion.
+
+### 7.6 Statistical and Correlation Analysis
+
+Use descriptive statistics to understand numerical variables.
+
+Potential methods include:
+
+* Mean and median
+* Standard deviation
+* Quartiles
+* Interquartile range (IQR) for investigating potential outliers
+* Correlation analysis between suitable numerical variables
+
+Correlation will be interpreted as an association and not as proof of causation.
+
+## 📈 8. Key Supply Chain Metrics
+
+The following metrics will be calculated where the necessary fields are available.
+
+| Metric                    | Definition                                                                             | Purpose                            |
+| ------------------------- | -------------------------------------------------------------------------------------- | ---------------------------------- |
+| Total order records       | Number of valid transaction records                                                    | Understand dataset volume          |
+| Unique orders             | Number of distinct order identifiers                                                   | Measure distinct orders            |
+| Total sales               | Sum of the validated sales field                                                       | Assess recorded sales              |
+| Total order quantity      | Sum of recorded order quantities                                                       | Understand recorded unit volume    |
+| Average shipping duration | Average of valid actual shipping durations                                             | Examine shipping performance       |
+| Average shipping delay    | Average difference between actual and scheduled shipping duration                      | Investigate shipping delays        |
+| On-Time Delivery (OTD) %  | Eligible on-time deliveries divided by total eligible deliveries, multiplied by 100    | Measure delivery performance       |
+| Late-delivery rate        | Eligible orders classified as late divided by total eligible orders, multiplied by 100 | Examine late-delivery outcomes     |
+| Average sales per order   | Validated sales total divided by distinct orders                                       | Understand average sales per order |
+| Average daily demand      | Recorded units over the analysis period divided by the number of calendar days         | Estimate recorded demand over time |
+
+### Metric Validation
+
+Metrics will be calculated only after checking the relevant fields, definitions, and aggregation levels.
+
+For example, if an order contains multiple transaction rows, counting rows as unique orders or summing repeated order-level values may produce misleading results.
+
+Similarly, a source-provided late-delivery-risk label will not automatically be treated as evidence that a delivery was actually late.
+
+## 📉 9. Planned Visualizations
+
+The project may include the following charts, depending on the data available:
+
+| Visualization                      | Analytical purpose                                             |
+| ---------------------------------- | -------------------------------------------------------------- |
+| Missing-value summary              | Understand data completeness                                   |
+| Numerical histograms               | Examine distributions                                          |
+| Box plots                          | Investigate spread and potential outliers                      |
+| Sales by product category          | Compare product-category performance                           |
+| Order volume by region             | Explore geographical order patterns                            |
+| Shipping duration by shipping mode | Compare shipping-duration distributions                        |
+| Shipping-delay distribution        | Investigate delays where calculable                            |
+| Daily or monthly order trends      | Examine changes in order activity                              |
+| Order-benefit distribution         | Understand the distribution of recorded order benefits         |
+| Correlation heatmap                | Investigate relationships between selected numerical variables |
+
+Each major visualization will include a descriptive title, readable axis labels, an appropriate legend where necessary, and a short interpretation.
+
+## 💡 10. Expected Business Value
+
+The analysis is intended to support a better understanding of supply chain operations.
+
+Potential areas of business value include:
+
+* **Operational monitoring:** Understand order and shipping performance using validated metrics.
+* **Product analysis:** Identify differences in recorded sales and order quantities across product categories.
+* **Geographical analysis:** Understand where order activity is concentrated.
+* **Delivery analysis:** Investigate differences in shipping durations and available delivery outcomes.
+* **Data quality:** Identify inconsistencies that could affect operational reporting.
+* **Decision support:** Translate verified analytical patterns into practical recommendations for further investigation.
+
+These are intended applications of the analysis, not confirmed findings. Final recommendations will be based on the actual results.
+
+## 📁 11. GitHub Repository Structure
+
+The repository can be organized as follows:
+
+```text
+supply-chain-analytics/
+│
+├── data/
+│   └── README.md
+│
+├── notebooks/
+│   ├── 01_data_understanding_and_quality_audit.ipynb
+│   ├── 02_data_cleaning_and_feature_engineering.ipynb
+│   └── 03_eda_and_supply_chain_metrics.ipynb
+│
+├── outputs/
+│   ├── charts/
+│   └── summary_tables/
+│
+├── README.md
+└── requirements.txt
+```
+
+### Folder Descriptions
+
+* `data/` — Local dataset storage. The raw dataset does not need to be committed to GitHub.
+* `notebooks/` — Jupyter Notebooks containing the analytical workflow.
+* `outputs/charts/` — Selected visualizations generated during analysis.
+* `outputs/summary_tables/` — Exported analytical summaries, where useful.
+* `README.md` — Project overview, setup instructions, workflow, and findings.
+* `requirements.txt` — Python dependencies required to reproduce the analysis.
+
+**Data handling:** Review the dataset's license, terms, size, and privacy considerations before sharing any source or processed data publicly. If the dataset should not be redistributed, provide instructions for obtaining it from the original source instead.
+
+## ⚙️ 12. Installation and Setup
+
+### Prerequisites
+
+Install the following:
+
+* Python 3.x
+* Jupyter Notebook or JupyterLab
+* Git, if you plan to clone the repository
+
+### Step 1: Clone the Repository
+
+```bash
+git clone <https://github.com/SiniyaVH/Supply_Chain_Analytics/DataCo_SMART_Supply_Chain>
+```
+
+### Step 2: Navigate to the Project Folder
+
+```bash
+cd supply-chain-analytics
+```
+
+### Step 3: Create a Virtual Environment (Recommended)
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment on Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+On macOS or Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+### Step 4: Install Dependencies
+
+Create a `requirements.txt` file containing:
+
+```text
+pandas
+numpy
+matplotlib
+seaborn
+jupyter
+```
+
+Install the libraries:
+
+```bash
+pip install -r https://github.com/SiniyaVH/Supply_Chain_Analytics/edit/main/DataCo_SMART_Supply_Chain
+```
+
+### Step 5: Download the Dataset
+
+Obtain the DataCo SMART Supply Chain dataset from the original Mendeley Data source:
+
+https://data.mendeley.com/datasets/8gx2fvg2k6/5
+
+Place the downloaded file in the appropriate local data folder, following the path expected by your notebook.
+
+Update the notebook's file path to match the actual filename and location.
+
+### Step 6: Launch Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open the notebooks in numerical order and execute the cells from top to bottom.
+
+**Note:** The exact filename and file format must be verified after downloading the dataset. Update the loading code accordingly.
+
+## 📝 13. Results and Key Findings
+
+This section will be updated after completing the analysis.
+
+The final version should summarize:
+
+* Important data-quality observations.
+* Key patterns in order volume and sales.
+* Product and geographical differences.
+* Shipping-duration and delivery-performance patterns, where supported.
+* Relevant statistical relationships.
+* Evidence-based business recommendations.
+* Limitations affecting the interpretation of results.
+
+**Current status:** Analysis results have not yet been documented in this README. No numerical findings or business conclusions are claimed at this stage.
+
+## ⚠️ 14. Project Limitations
+
+The analysis is subject to the fields and data quality of the selected dataset version.
+
+Key limitations include:
+
+* The dataset may not contain actual delivery dates or scheduled delivery dates needed to calculate date-based OTD.
+* A late-delivery-risk field may represent risk classification rather than an actual delivery outcome.
+* Recorded order quantities do not necessarily represent warehouse stock movements.
+* Inventory balances, reorder points, and stockout indicators may not be available.
+* Shipping cost variance requires actual and expected or budgeted shipping cost fields.
+* Time-series conclusions depend on date validity and historical coverage.
+* Order-level metrics require correct handling of transaction-level records to avoid double-counting.
+
+The project will not claim actual inventory optimization, stockout prediction, shipping cost variance, or route-efficiency improvements without the necessary supporting data.
+
+## 🚀 15. Future Improvements
+
+Possible extensions, depending on data availability and project requirements, include:
+
+* Additional data-quality validation and automated reporting.
+* More detailed product and regional comparisons.
+* Improved visualization and reporting of supply chain metrics.
+* Integration of additional operational data if a suitable source becomes available.
+* Forecasting or delivery-risk modeling as a separate extension, subject to valid targets, suitable features, and appropriate validation.
+
+These extensions are not part of the current core project scope.
+
+## 👩‍💻 16. Skills Demonstrated
+
+This project is intended to demonstrate the following Data Analyst skills:
+
+* Python programming
+* Pandas data manipulation
+* NumPy numerical operations
+* Data cleaning and preprocessing
+* Data quality assessment
+* Feature engineering
+* Exploratory Data Analysis (EDA)
+* Descriptive and statistical analysis
+* Data visualization using Matplotlib and Seaborn
+* Business question formulation
+* Analytical interpretation and reporting
+* GitHub project documentation
+
+## 📚 17. References
+
+**Dataset:** DataCo SMART Supply Chain for Big Data Analysis
+
+**Source:** Mendeley Data
+
+**Dataset page:**
+https://data.mendeley.com/datasets/8gx2fvg2k6/5
+
+---
+
+### 📌 Project Summary
+
+**Supply Chain Analytics Using Python** is a data analytics portfolio project focused on understanding supply chain operations through data cleaning, exploratory analysis, statistical summaries, visualization, and evidence-based recommendations.
+
+The project aims to demonstrate how Python can be used to transform raw operational data into clear, useful analytical insights while maintaining transparency about data quality, metric definitions, and analytical limitations.
 
