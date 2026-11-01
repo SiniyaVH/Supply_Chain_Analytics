@@ -1,5 +1,5 @@
 # 📦 Supply Chain Analytics Using Python
-![Image](DataCo_SMART_Supply_Chain/Image/Image.png)
+![Image](Image/Image.png)
 ### Inventory, Logistics Performance, and Demand Analysis
 
 **Project Type:** Data Analytics Portfolio Project
