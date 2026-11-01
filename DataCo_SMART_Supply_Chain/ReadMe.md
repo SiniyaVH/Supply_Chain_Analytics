@@ -1,5 +1,5 @@
 # 📦 Supply Chain Analytics Using Python
-
+![Images](Images/Image.png)
 ### Inventory, Logistics Performance, and Demand Analysis
 
 **Project Type:** Data Analytics Portfolio Project
