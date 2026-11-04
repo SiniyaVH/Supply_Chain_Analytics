@@ -123,40 +123,285 @@ Machine learning and predictive demand forecasting are outside the core project 
 
 The project follows these analytical stages.
 
-### Step 1: Data Loading
+### Step 6.1: Data Loading
 
 * Import the required Python libraries.
 * Load the downloaded dataset into a Pandas DataFrame.
 * Verify that the file has loaded correctly.
-* Inspect the first and last few records.
+* Prepared SRS.
 
-### Step 2: Data Understanding
+### Step 6.2: Data Cleaning and Preprocessing Workflow
 
-* Examine the number of rows and columns.
-* Review column names and data types.
-* Identify numerical and categorical variables.
-* Understand the meaning of important fields.
-* Check the granularity of the records.
+The following steps were performed using Python, Pandas and NumPy to clean and prepare the DataCo SMART Supply Chain dataset.
 
-### Step 3: Data Quality Assessment
+#### 1. Import Libraries and Load Dataset
 
-* Calculate missing-value counts and percentages.
-* Identify duplicate rows and investigate duplicate identifiers.
-* Check inconsistent data types.
-* Validate date fields.
-* Examine unusual numerical values and potential outliers.
-* Document data-quality issues before applying cleaning rules.
+```python
+import pandas as pd
+import numpy as np
 
-### Step 4: Data Cleaning and Preprocessing
+df = pd.read_csv(
+    "DataCoSupplyChainDataset.csv",
+    encoding="latin1"
+)
+```
 
-* Handle missing values using justified methods.
-* Investigate and address duplicate records where appropriate.
-* Convert columns to suitable data types.
-* Standardize inconsistent categorical values.
-* Validate numerical and date fields.
-* Preserve the original dataset and apply cleaning rules to a working copy.
+#### 2. Initial Dataset Inspection
 
-### Step 5: Feature Engineering
+Inspected the dataset to understand its structure, dimensions, data types and statistical information.
+
+```python
+df.head()
+df.shape
+df.info()
+df.describe(include="all").T
+df.nunique()
+```
+
+#### 3. Missing Value Analysis
+
+Identified missing values and calculated their percentage in each column.
+
+```python
+df.isnull().sum()
+
+missing_percentage = (df.isnull().sum() / len(df)) * 100
+
+print(missing_percentage)
+```
+
+Columns identified for removal included:
+
+* Customer Zipcode
+* Order Zipcode
+* Product Description
+
+#### 4. Duplicate Column Identification
+
+Compared columns to identify identical data.
+
+```python
+duplicate_columns = df.columns[df.T.duplicated()].tolist()
+
+print("Duplicate columns:", duplicate_columns)
+
+df.drop(columns=duplicate_columns, inplace=True)
+```
+
+#### 5. Removing Unnecessary Columns
+
+Removed irrelevant columns that were not required for the planned analysis.
+
+```python
+col_drop = [
+    "Customer Password",
+    "Customer Zipcode",
+    "Order Zipcode",
+    "Product Description",
+    "Product Image"
+]
+
+existing_columns = [col for col in col_drop if col in df.columns]
+
+df.drop(columns=existing_columns, inplace=True, errors="ignore")
+
+print("Columns dropped:", existing_columns)
+```
+
+#### 6. Customer Name Creation
+
+Combined customer first name and last name into a single column.
+
+```python
+df["Customer Name"] = df["Customer Fname"] + " " + df["Customer Lname"]
+
+df.drop(
+    columns=["Customer Fname", "Customer Lname"],
+    inplace=True,
+    errors="ignore"
+)
+```
+
+#### 7. DateTime Conversion
+
+Converted order date and shipping date columns into Pandas datetime format.
+
+```python
+date_columns = [
+    "shipping date (DateOrders)",
+    "order date (DateOrders)"
+]
+
+for col in date_columns:
+    df[col] = pd.to_datetime(df[col], errors="coerce")
+```
+
+#### 8. Actual Shipping Days Calculation
+
+Created a new column to calculate the actual number of calendar days between order placement and shipping.
+
+```python
+df["Actual_Shipping_Days"] = (
+    df["shipping date (DateOrders)"] -
+    df["order date (DateOrders)"]
+).dt.days
+```
+
+Compared the newly calculated values with the existing shipping-days column.
+
+```python
+df["Actual_Shipping_Days"].equals(
+    df["Days for shipping (real)"]
+)
+```
+
+Removed the original column after comparison.
+
+```python
+df.drop(
+    columns=["Days for shipping (real)"],
+    inplace=True,
+    errors="ignore"
+)
+```
+
+#### 9. Removing Cancelled Shipping Records
+
+Removed records with the delivery status `Shipping canceled`.
+
+```python
+cancelled_rows = (
+    df["Delivery Status"].str.strip().str.lower()
+    == "shipping canceled"
+).sum()
+
+df = df[
+    df["Delivery Status"].str.strip().str.lower()
+    != "shipping canceled"
+]
+
+print("Cancelled rows deleted:", cancelled_rows)
+print("Remaining rows:", len(df))
+```
+
+#### 10. Delivery Status Classification
+
+Created a new `Delivery_Status` column by comparing actual shipping days with scheduled shipping days.
+
+```python
+conditions = [
+    df["Days for shipment (scheduled)"] > df["Actual_Shipping_Days"],
+
+    df["Days for shipment (scheduled)"] < df["Actual_Shipping_Days"],
+
+    df["Days for shipment (scheduled)"] == df["Actual_Shipping_Days"]
+]
+
+status = [
+    "Advanced Shipping",
+    "Late Delivery",
+    "Shipping On Time"
+]
+
+df["Delivery_Status"] = np.select(
+    conditions,
+    status,
+    default="Unknown"
+)
+```
+
+Compared the newly created delivery-status column with the original delivery-status column.
+
+```python
+df["Delivery_Status"].equals(df["Delivery Status"])
+```
+
+Removed the original delivery-status column.
+
+```python
+df.drop(
+    columns=["Delivery Status"],
+    inplace=True,
+    errors="ignore"
+)
+```
+
+#### 11. Delivery Risk Flag Creation
+
+Created a binary delivery-risk indicator based on the newly classified delivery status.
+
+* 1 – Late Delivery
+* 0 – Not Late Delivery
+
+```python
+df["delivery_risk"] = np.where(
+    df["Delivery_Status"] == "Late Delivery",
+    1,
+    0
+)
+```
+
+#### 12. Final Dataset Inspection
+
+Inspected the final dataset to verify the updated columns and data types.
+
+```python
+df.info()
+
+df.head()
+
+df.shape
+```
+Column                                      dtype
+--------------------------------------------------
+Type                                        str
+Days for shipment (scheduled)             int64
+Category Name                               str
+Customer City                               str
+Customer Country                            str
+Customer Segment                            str
+Customer State                              str
+Customer Street                             str
+Department Id                             int64
+Department Name                             str
+Latitude                                float64
+Longitude                               float64
+Market                                      str
+Order City                                  str
+Order Country                               str
+Order Customer Id                         int64
+order date (DateOrders)          datetime64[us]
+Order Id                                  int64
+Order Item Discount                     float64
+Order Item Discount Rate                float64
+Order Item Id                             int64
+Order Item Profit Ratio                 float64
+Order Item Quantity                       int64
+Sales                                   float64
+Order Item Total                        float64
+Order Profit Per Order                  float64
+Order Region                                str
+Order State                                 str
+Order Status                                str
+Product Card Id                           int64
+Product Category Id                       int64
+Product Name                                str
+Product Price                           float64
+Product Status                            int64
+shipping date (DateOrders)       datetime64[us]
+Shipping Mode                               str
+Customer Name                               str
+Actual_Shipping_Days                      int64
+Delivery_Status                             str
+delivery_risk                             int64
+---
+
+**Preprocessing Status:** Completed
+
+The dataset has undergone initial inspection, missing-value assessment, column removal, date conversion, feature creation, cancelled-record removal and delivery-status classification.
+
+
+### Step 6.3: Feature Engineering
 
 Create useful analytical features when the required source fields are available.
 
@@ -171,20 +416,20 @@ Potential features include:
 
 All derived variables will be documented, and invalid or unsupported calculations will be excluded.
 
-### Step 6: Exploratory Data Analysis
+### Step 6.4: Exploratory Data Analysis
 
 Explore the dataset using statistical summaries and visualizations.
 
 The analysis will investigate order activity, sales patterns, product categories, geographical differences, shipping performance, and relationships between numerical variables.
 
-### Step 7: Business Insights
+### Step 6.5: Business Insights
 
 * Summarize the patterns identified during analysis.
 * Explain relevant differences across products, regions, and shipping modes.
 * Identify data-quality limitations that affect interpretation.
 * Develop recommendations supported by the analytical evidence.
 
-### Step 8: Documentation
+### Step 6.6: Documentation
 
 * Organize the analysis in Jupyter Notebook.
 * Add explanations and interpretations to important charts.
