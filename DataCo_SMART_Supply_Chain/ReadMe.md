@@ -352,48 +352,49 @@ df.head()
 
 df.shape
 ```
-Column                                      dtype
---------------------------------------------------
-Type                                        str
-Days for shipment (scheduled)             int64
-Category Name                               str
-Customer City                               str
-Customer Country                            str
-Customer Segment                            str
-Customer State                              str
-Customer Street                             str
-Department Id                             int64
-Department Name                             str
-Latitude                                float64
-Longitude                               float64
-Market                                      str
-Order City                                  str
-Order Country                               str
-Order Customer Id                         int64
-order date (DateOrders)          datetime64[us]
-Order Id                                  int64
-Order Item Discount                     float64
-Order Item Discount Rate                float64
-Order Item Id                             int64
-Order Item Profit Ratio                 float64
-Order Item Quantity                       int64
-Sales                                   float64
-Order Item Total                        float64
-Order Profit Per Order                  float64
-Order Region                                str
-Order State                                 str
-Order Status                                str
-Product Card Id                           int64
-Product Category Id                       int64
-Product Name                                str
-Product Price                           float64
-Product Status                            int64
-shipping date (DateOrders)       datetime64[us]
-Shipping Mode                               str
-Customer Name                               str
-Actual_Shipping_Days                      int64
-Delivery_Status                             str
-delivery_risk                             int64
+|   Column                          | dtype                                            |
+| --------------------------------- | ------------------------------------------------ |
+| Type                              |          str                                     |
+| Days for shipment (scheduled)     |        int64                                     |
+| Category Name                     |          str                                     |
+| Customer City                     |          str                                     |
+| Customer Country                  |          str                                     |
+| Customer Segment                  |          str                                     |
+| Customer State                    |          str                                     |
+| Customer Street                   |          str                                     |
+| Department Id                     |        int64                                     |
+| Department Name                   |          str                                     |
+| Latitude                          |      float64                                     |
+| Longitude                         |      float64                                     |
+| Market                            |          str                                     |
+| Order City                        |          str                                     |
+| Order Country                     |          str                                     |
+| Order Customer Id                 |        int64                                     |
+| order date (DateOrders)           |    datetime64[us]                                |
+| Order Id                          |        int64                                     |
+| Order Item Discount               |      float64                                     |
+| Order Item Discount Rate          |      float64                                     |
+| Order Item Id                     |        int64                                     |
+| Order Item Profit Ratio           |      float64                                     |
+| Order Item Quantity               |        int64                                     |
+| Sales                             |      float64                                     |
+| Order Item Total                  |      float64                                     |
+| Order Profit Per Order            |      float64                                     |
+| Order Region                      |          str                                     |
+| Order State                       |          str                                     |
+| Order Status                      |          str                                     |
+| Product Card Id                   |        int64                                     |
+| Product Category Id               |        int64                                     |
+| Product Name                      |          str                                     |
+| Product Price                     |      float64                                     |
+| Product Status                    |        int64                                     |
+| shipping date (DateOrders)        |    datetime64[us]                                |
+| Shipping Mode                     |          str                                     |
+| Customer Name                     |          str                                     |
+|Actual_Shipping_Days               |       int64                                      |
+| Delivery_Status                   |          str                                     |
+| delivery_risk                     |        int64                                     |                                       
+
 ---
 
 **Preprocessing Status:** Completed
