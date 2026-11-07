@@ -74,8 +74,8 @@ The dataset is intended to support analysis of supply chain and transactional op
 | Dataset name      | DataCo SMART Supply Chain                                                            |
 | Source            | Mendeley Data                                                                        |
 | File format       | csv                                                                                  |
-| Number of rows    | 180519 + 469977                                                                     |
-| Number of columns | 53 + 8                                                                               |
+| Number of rows    | 180519                                                                               |
+| Number of columns | 53                                                                                   |
 | Data types        | int64, Str, float64                                                                  |              
 | Domain            | Supply Chain                                                                         |
 
