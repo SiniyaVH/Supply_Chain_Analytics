@@ -130,7 +130,7 @@ The project follows these analytical stages.
 * Verify that the file has loaded correctly.
 * Prepared SRS.
 
-### Step 6.2: Data Cleaning and Preprocessing Workflow
+### Step 6.2: Data Cleaning, Preprocessing and Feature Engineering
 
 The following steps were performed using Python, Pandas and NumPy to clean and prepare the DataCo SMART Supply Chain dataset.
 
@@ -370,7 +370,7 @@ df.shape
 | Order City                        |          str                                     |
 | Order Country                     |          str                                     |
 | Order Customer Id                 |        int64                                     |
-| order date (DateOrders)           |    datetime64[us]                                |
+| Order date                        |    datetime64[us]                                |
 | Order Id                          |        int64                                     |
 | Order Item Discount               |      float64                                     |
 | Order Item Discount Rate          |      float64                                     |
@@ -388,54 +388,25 @@ df.shape
 | Product Name                      |          str                                     |
 | Product Price                     |      float64                                     |
 | Product Status                    |        int64                                     |
-| shipping date (DateOrders)        |    datetime64[us]                                |
+| shipping date                     |    datetime64[us]                                |
 | Shipping Mode                     |          str                                     |
 | Customer Name                     |          str                                     |
-|Actual_Shipping_Days               |       int64                                      |
-| Delivery_Status                   |          str                                     |
-| delivery_risk                     |        int64                                     |                                       
-
+|Actual Shipping Days               |       int64                                      |
+| Delivery Status                   |          str                                     |
+| delivery Risk                     |        int64                                     |                                       
+|  Order Year                       |        int64                                     | 
+|  Order Month                      |        int64                                     | 
+| Month_Name                        |         str                                      | 
+|  Order Day                        |         str                                      | 
+|  Order Hour                       |        int64                                     | 
+|  Delay                            |         int64                                    | 
+|  Is delay                         |         bool                                     | 
+|  Profitability                    |         str                                      | 
 ---
 
 **Preprocessing Status:** Completed
 
 The dataset has undergone initial inspection, missing-value assessment, column removal, date conversion, feature creation, cancelled-record removal and delivery-status classification.
-
-
-### Step 6.3: Feature Engineering
-
-Create useful analytical features when the required source fields are available.
-
-Potential features include:
-
-* Order year, month, quarter, and day of week.
-* Order-to-ship lead time.
-* Order cycle time.
-* Shipping delay.
-* Daily or monthly order quantities.
-* Aggregated sales and order metrics.
-
-All derived variables will be documented, and invalid or unsupported calculations will be excluded.
-
-### Step 6.4: Exploratory Data Analysis
-
-Explore the dataset using statistical summaries and visualizations.
-
-The analysis will investigate order activity, sales patterns, product categories, geographical differences, shipping performance, and relationships between numerical variables.
-
-### Step 6.5: Business Insights
-
-* Summarize the patterns identified during analysis.
-* Explain relevant differences across products, regions, and shipping modes.
-* Identify data-quality limitations that affect interpretation.
-* Develop recommendations supported by the analytical evidence.
-
-### Step 6.6: Documentation
-
-* Organize the analysis in Jupyter Notebook.
-* Add explanations and interpretations to important charts.
-* Document assumptions, metric definitions, and limitations.
-* Prepare the final GitHub README and project report.
 
 ## 📊 7. Exploratory Data Analysis
 
