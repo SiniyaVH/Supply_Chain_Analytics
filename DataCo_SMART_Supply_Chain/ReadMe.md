@@ -2,6 +2,14 @@
 ![Image](Image/Image.png)
 ### Inventory, Logistics Performance, and Demand Analysis
 
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical_Computing-013243?logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-blue)
+![Plotly](https://img.shields.io/badge/Plotly-Interactive_Charts-3F4F75?logo=plotly)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+
 **Project Type:** Data Analytics Portfolio Project
 **Domain:** Supply Chain & Logistics Analytics
 **Programming Language:** Python
@@ -10,51 +18,66 @@
 
 ---
 
+
 ## 📌 1. Project Overview
 
-Supply chain management involves coordinating orders, products, customers, shipping operations, and deliveries. Analyzing supply chain data can help organizations understand operational performance, identify inefficiencies, and make data-driven decisions.
+Supply chain management plays an important role in ensuring that products move efficiently from manufacturers and warehouses to customers. Effective supply chain operations require proper demand planning, inventory management, order fulfillment, logistics coordination, and financial performance monitoring.
 
-This project focuses on analyzing the **DataCo SMART Supply Chain dataset** using Python and its data analysis libraries.
+This project, **Supply Chain Analytics Using Python**, focuses on analyzing the DataCo SMART Supply Chain dataset to identify operational inefficiencies, understand customer demand, evaluate product movement, investigate delivery performance, and assess order-level profitability.
 
-The project follows an end-to-end data analytics workflow, including data understanding, data quality assessment, data cleaning, feature engineering, exploratory data analysis (EDA), statistical analysis, visualization, and business recommendations.
+The project uses Python-based data analytics techniques to transform raw transactional data into meaningful business insights.
 
-The analysis aims to identify patterns in order activity, sales, product performance, geographical demand, and shipping operations using the fields available in the dataset.
+The analysis covers four major areas:
 
-The project is designed as a practical portfolio project demonstrating Python-based data analytics skills.
+- **Inventory Management:** Understanding product movement and identifying fast-, medium-, and slow-moving products using historical demand.
+- **Demand Analysis:** Examining product demand, sales patterns, customer segments, geographical demand, and order trends.
+- **Logistics Optimization:** Investigating delivery delays, shipping performance, delivery risk, and order fulfillment efficiency.
+- **Profitability Analysis:** Evaluating profit distribution, loss-making transactions, discount impact, and profitability across different business segments.
 
-## 🎯 2. Project Objectives
+The ultimate goal is to identify the factors affecting supply chain efficiency and profitability and provide data-driven recommendations for improving business operations.
 
-The main objectives are to:
+---
 
-* Understand the structure and quality of the supply chain dataset.
-* Identify and handle missing values, duplicate records, inconsistent data types, and data-quality issues.
-* Perform feature engineering to create useful analytical variables.
-* Analyze order volumes, quantities, and sales trends.
-* Examine product category and customer segment performance.
-* Investigate shipping duration and delivery performance where the required fields are available.
-* Explore geographical patterns in orders and sales.
-* Apply descriptive statistics and correlation analysis to investigate relationships between variables.
-* Create meaningful visualizations to communicate analytical findings.
-* Develop evidence-based recommendations for improving supply chain operations.
+## 🎯 2. Business Problem
 
-## 🏢 3. Business Problem
+The company experiences strong market demand and generates substantial sales. However, operational inefficiencies in order fulfillment and logistics create challenges that affect overall business performance.
 
-Supply chain operations generate data across multiple activities, including customer orders, product sales, shipping, and delivery.
+The major business concerns include:
 
-However, raw operational data may contain missing values, inconsistent records, unusual observations, and relationships that are difficult to identify without systematic analysis.
+1. **Delivery Delays:** A significant proportion of orders experience late delivery, indicating potential inefficiencies in logistics and order fulfillment.
 
-Organizations need to understand questions such as:
+2. **Product Movement:** Different products have different demand patterns. Understanding fast-, medium-, and slow-moving products is important for effective inventory planning.
 
-* Which product categories generate the highest recorded sales?
-* How do order quantities vary across products and geographical regions?
-* How does order activity change over time?
-* How do shipping durations differ across shipping modes?
-* Which regions or product categories show different delivery-performance patterns?
-* What data-quality issues could affect the reliability of supply chain reporting?
+3. **Demand Variations:** Product demand varies across categories, customer segments, markets, and geographical regions.
 
-This project uses Python-based data analytics to investigate these questions and translate the results into understandable business insights.
+4. **Profitability Issues:** Despite generating sales, the company experiences loss-making transactions, suggesting that discounts, shipping expenses, and other order-level factors may affect profitability.
 
-The final conclusions will depend on the actual fields, quality, and coverage of the downloaded dataset.
+5. **Logistics Performance:** Shipping modes, scheduled delivery days, actual shipping days, and delivery risks influence the overall customer fulfillment experience.
+
+### Analytical Goal
+
+To identify the major factors affecting supply chain efficiency and profitability by analyzing historical demand, product movement, delivery performance, logistics operations, and order-level financial performance.
+
+The project aims to generate actionable insights that can support better demand planning, inventory decisions, logistics performance, and profitability improvement.
+
+---
+
+## 🎯 3. Project Objectives
+
+The primary objectives of this project are:
+
+- Analyze historical sales and product demand patterns.
+- Identify high-demand and low-demand products.
+- Classify products based on their movement as fast-, medium-, and slow-moving.
+- Understand demand distribution across product categories, markets, and geographical regions.
+- Evaluate delivery performance and identify factors associated with late deliveries.
+- Analyze shipping modes and their relationship with delivery performance.
+- Investigate the distribution of profit and identify loss-making transactions.
+- Examine the relationship between discounts, sales, and profitability.
+- Identify operational inefficiencies and potential areas for improvement.
+- Develop data-driven business recommendations.
+
+---
 
 ## 📂 4. Dataset Information
 
@@ -68,6 +91,10 @@ https://data.mendeley.com/datasets/8gx2fvg2k6/5
 The dataset is intended to support analysis of supply chain and transactional operations. The exact structure, column definitions, and available measures will be verified after downloading the selected dataset version.
 
 ### Dataset Information to Document
+**Original Dataset Size:**
+- Total Records: 180,519
+- Contains customer, order, product, sales, shipping, delivery, and financial information.
+
 
 | Attribute         | Description                                                                          |
 | ----------------- | ------------------------------------------------------------------------------------ |
@@ -79,36 +106,47 @@ The dataset is intended to support analysis of supply chain and transactional op
 | Data types        | int64, Str, float64                                                                  |              
 | Domain            | Supply Chain                                                                         |
 
-### Important Dataset Considerations
+**Cleaned Dataset Size:**
+- Total Records: 172,765
+- Total Columns: 43
+### Important Dataset Attributes
 
-Before starting the analysis:
+| Category | Important Columns |
+|---|---|
+| Order Information | Order Id, Order Date, Order Status |
+| Customer Information | Customer Id, Customer Segment, Customer City, Customer Country |
+| Product Information | Product Id, Product Name, Category Name |
+| Demand Information | Order Item Quantity |
+| Sales Information | Sales, Order Item Total |
+| Profitability | Order Profit Per Order |
+| Discount | Order Item Discount, Order Item Discount Rate |
+| Shipping | Shipping Mode, Days for Shipping (Scheduled) |
+| Delivery | Days for Shipping (Real), Delivery Status, Late Delivery Risk |
+| Geographical Information | Market, Order Region, Order Country |
 
-* Inspect the actual column names and available data dictionary.
-* Verify whether each row represents an order, order item, or another transaction record.
-* Check the availability and validity of date, sales, quantity, and delivery-related fields.
-* Confirm the meaning of delivery-status and late-delivery-risk fields.
-* Verify whether financial values are recorded at order level or transaction-line level.
-* Determine whether the dataset contains sufficient historical coverage for time-based analysis.
+The dataset contains historical transactional information that allows the analysis of customer demand, product movement, delivery operations, and financial performance.
 
-**Note:** Inventory optimization, actual stockout analysis, date-based on-time delivery calculations, and shipping cost variance require specific fields. These analyses will only be performed if the necessary data is available.
+---
 
-## 🛠️ 5. Technologies and Libraries
+## 🛠️ 5. Technologies and Tools Used
 
-The project uses a Python-based analytical workflow.
+The project uses Python and its data analytics ecosystem.
 
-| Technology       | Purpose                                                        |
-| ---------------- | -------------------------------------------------------------- |
-| Python           | Primary programming language                                   |
-| Pandas           | Data loading, cleaning, transformation, grouping, and analysis |
-| NumPy            | Numerical operations and statistical calculations              |
-| Matplotlib       | Data visualization                                             |
-| Seaborn          | Statistical and comparative visualizations                     |
-| Jupyter Notebook | Interactive analysis and documentation                         |
-| Git and GitHub   | Version control and portfolio presentation                     |
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| Jupyter Notebook | Development and analysis environment |
+| Pandas | Data manipulation, cleaning, and aggregation |
+| NumPy | Numerical calculations and feature engineering |
+| Matplotlib | Statistical and exploratory visualizations |
+| Seaborn | Statistical data visualization |
+| Plotly | Interactive data visualizations |
+| Power BI | Planned business intelligence dashboard |
 
-### Core Project Scope
+**Note:** The core data cleaning, analysis, calculations, and exploratory visualizations are performed using Python. Power BI is intended for the separate dashboard presentation layer.
 
-The project focuses on:
+---
+The project focused on:
 
 * Data cleaning and preprocessing
 * Feature engineering
@@ -403,102 +441,43 @@ df.shape
 |  Is delay                         |         bool                                     | 
 |  Profitability                    |         str                                      | 
 ---
+**Dataset Transformation:**
+
+| Description | Records | Columns |
+|---|---:|---:|
+| Original Dataset | 180,519 | Original structure |
+| Cleaned Dataset | 172,765 | 43 |
 
 **Preprocessing Status:** Completed
 
 The dataset has undergone initial inspection, missing-value assessment, column removal, date conversion, feature creation, cancelled-record removal and delivery-status classification.
 
-## 📊 7. Exploratory Data Analysis
+### Phase 6: Advanced Business Analysis
 
-The following analyses are planned, subject to the availability and suitability of the corresponding fields.
+The cleaned dataset was used to perform four major analytical investigations:
 
-### 7.1 Univariate Analysis
+1. Inventory Management and Product Movement
+2. Demand Analysis
+3. Logistics and Delivery Performance
+4. Profitability Analysis
 
-Examine individual variables to understand their distributions and identify unusual patterns.
+### 6.3 Data Visualization
 
-Potential variables:
+Matplotlib, Seaborn, and Plotly were used to create visualizations that help communicate business patterns and analytical findings.
 
-* Sales
-* Order quantities
-* Discounts
-* Order benefits
-* Shipping duration
-* Shipping delay
-* Product categories
-* Shipping modes
+### 6.4 Business Insights and Recommendations
 
-**Possible visualizations:** Histograms, box plots, count plots, and bar charts.
+The final phase focuses on interpreting analytical results and translating them into meaningful business recommendations.
 
-### 7.2 Sales and Product Analysis
+---
 
-Investigate sales and recorded quantities across products and product categories.
 
-Questions include:
 
-* Which product categories have the highest recorded sales?
-* How are order quantities distributed across categories?
-* How do sales vary across customer segments?
-* What patterns appear in the available order-benefit and discount fields?
+# 📊 7. Exploratory Data Analysis
 
-**Possible visualizations:** Bar charts, grouped summaries, and box plots.
+EDA helps understand the overall characteristics of the dataset and identify important patterns before performing deeper business analysis.
 
-### 7.3 Geographical Analysis
-
-Analyze orders, quantities, and sales across available geographical fields.
-
-Questions include:
-
-* How is order activity distributed across countries or regions?
-* Which geographical areas have relatively high recorded sales?
-* How do product and order patterns vary across regions?
-
-**Possible visualizations:** Bar charts and comparative plots.
-
-### 7.4 Shipping and Delivery Analysis
-
-Examine shipping operations using the available shipping-related fields.
-
-Questions include:
-
-* How does shipping duration vary across shipping modes?
-* What differences exist in available delivery outcomes across regions?
-* Are there records with unusually long shipping durations?
-* What patterns appear in delivery-status or late-risk fields?
-
-**Possible visualizations:** Box plots, violin plots, and bar charts.
-
-Actual on-time delivery rates will only be calculated if the required delivery information and a defensible on-time definition are available.
-
-### 7.5 Time-Based Analysis
-
-Analyze order and sales activity over time when valid transaction dates are available.
-
-Potential analyses include:
-
-* Daily order volume
-* Daily order quantities
-* Monthly sales trends
-* Changes in shipping performance over time
-
-**Possible visualizations:** Line charts and time-based summary plots.
-
-Seasonality will only be discussed if the dataset provides sufficient historical coverage to support the conclusion.
-
-### 7.6 Statistical and Correlation Analysis
-
-Use descriptive statistics to understand numerical variables.
-
-Potential methods include:
-
-* Mean and median
-* Standard deviation
-* Quartiles
-* Interquartile range (IQR) for investigating potential outliers
-* Correlation analysis between suitable numerical variables
-
-Correlation will be interpreted as an association and not as proof of causation.
-
-## 📈 8. Key Supply Chain Metrics
+## 📈 Key Supply Chain Metrics
 
 The following metrics will be calculated where the necessary fields are available.
 
@@ -526,29 +505,436 @@ For example, if an order contains multiple transaction rows, counting rows as un
 
 Similarly, a source-provided late-delivery-risk label will not automatically be treated as evidence that a delivery was actually late.
 
-## 📉 9. Visualizations
+###  Univariate Analysis
+
+Univariate analysis examines individual variables independently.
+
+The following variables were explored:
+
+- Sales distribution
+- Profit per order distribution
+- Product quantity distribution
+- Order quantity distribution
+- Customer segment distribution
+- Shipping mode distribution
+- Order status distribution
+- Delivery status distribution
+
+**Visualizations:**
+- Histograms
+- Box plots
+- Count plots
+- Distribution plots
+- Bar charts
+
+### Bivariate Analysis &  Multivariate Analysis
+
+Bivariate analysis examines relationships between two variables.
+Multivariate analysis examines multiple variables simultaneously to understand more complex business relationships.
+
+The following relationships were investigated:
+
+| Analysis | Business Purpose |
+|---|---|
+| Sales vs Customer Segment | Understand sales contribution by customer segment |
+| Profit vs Product Category | Identify profitable and loss-making categories |
+| Shipping Mode vs Delivery Status | Compare delivery performance across shipping modes |
+| Discount vs Profit | Examine the relationship between discounts and profitability |
+| Quantity vs Product Category | Understand product demand across categories |
+| Market vs Sales | Compare sales performance across markets |
+| Delivery Risk vs Delivery Status | Understand the relationship between delivery risk and actual delivery outcomes |
+
+- Correlation between numerical variables.
+- Relationship between shipping performance and delivery risk.
+- Product demand across different markets and categories.
+- Profitability across customer segments and regions.
+- Comparison of shipping modes and delivery performance.
+
+---
+
+# 📦  Inventory Management and Product Movement Analysis
+
+Inventory management is important for maintaining product availability while avoiding unnecessary inventory holding costs.
+
+This project uses historical product demand to understand product movement patterns.
+
+Since the dataset primarily contains transactional information rather than actual warehouse stock levels, inventory analysis focuses on historical demand and product movement instead of calculating actual stock availability or reorder quantities.
+
+### Key Analytical Areas
+
+**1. Product Quantity Analysis**
+
+Analyze the total quantity ordered for each product to identify high-demand and low-demand products.
+
+**2. Product Movement Classification**
+
+Products are classified into three categories based on their total historical quantity sold.
+
+| Product Movement | Description |
+|---|---|
+| Fast-Moving | Products with relatively high demand |
+| Medium-Moving | Products with moderate demand |
+| Slow-Moving | Products with relatively low demand |
+
+Classification is based on demand distribution and selected quantity thresholds.
+
+**3. Category-Wise Product Demand**
+
+Understand which product categories contribute the highest demand.
+
+**4. Product-Wise Order Analysis**
+
+Identify products with the highest number of orders and highest quantity sold.
+
+**5. Product Demand and Sales Contribution**
+
+Compare product quantity with sales contribution to understand the relationship between product demand and revenue generation.
+
+### Business Value
+
+- Identify products with high historical demand.
+- Understand slow-moving product patterns.
+- Support demand-based inventory planning.
+- Improve product assortment decisions.
+- Reduce the risk of excessive inventory accumulation.
+
+---
+
+# 📈  Demand Analysis
+
+Demand analysis helps businesses understand customer purchasing behavior and identify variations in product demand.
+
+This section investigates historical sales and quantity patterns across different dimensions.
+
+### Key Analytical Areas
+
+**1. Overall Demand Analysis**
+
+- Total order quantity.
+- Average order quantity.
+- Product demand distribution.
+- Order volume trends.
+
+**2. Product-Wise Demand**
+
+- Highest-demand products.
+- Lowest-demand products.
+- Total quantity sold by product.
+- Number of orders by product.
+
+**3. Category-Wise Demand**
+
+- Total quantity by product category.
+- Category contribution to overall demand.
+- Comparison of demand across categories.
+
+**4. Geographical Demand Analysis**
+
+- Country-wise demand.
+- Market-wise demand.
+- Region-wise order quantity.
+- Customer demand distribution across geographical locations.
+
+**5. Customer Segment Analysis**
+
+- Sales contribution by customer segment.
+- Order quantity by customer segment.
+- Purchasing patterns across customer groups.
+
+### Business Value
+
+- Understand customer purchasing patterns.
+- Identify high-demand product categories.
+- Recognize geographical demand variations.
+- Support demand planning and product allocation.
+- Improve future demand planning decisions.
+
+---
+
+# 🚚  Logistics Optimization and Delivery Performance Analysis
+
+Logistics performance directly affects customer satisfaction, order fulfillment, and operational efficiency.
+
+This analysis focuses on understanding delivery performance and identifying factors associated with late shipments.
+
+### Key Analytical Areas
+
+**1. Delivery Status Analysis**
+
+Examine the distribution of:
+
+- Late Delivery
+- Shipping On Time
+- Advance Shipping
+
+Understand the overall delivery performance of the company.
+
+**2. Late Delivery Analysis**
+
+Calculate the percentage of orders delivered late.
+
+Formula:
+
+Late Delivery Rate = (Late Delivered Orders / Total Relevant Delivered Orders) × 100
+
+**3. Shipping Mode Analysis**
+
+Compare delivery performance across different shipping modes.
+
+Examples:
+
+- First Class
+- Second Class
+- Standard Class
+- Same Day
+
+**4. Scheduled vs Actual Shipping Days**
+
+Compare the expected shipping duration with actual shipping duration to understand delivery performance.
+
+**5. Delivery Risk Analysis**
+
+Examine the relationship between delivery risk indicators and actual delivery status.
+
+**6. Regional Delivery Analysis**
+
+Identify geographical areas with relatively higher delivery delays.
+
+**7. Shipping Priority Analysis**
+
+Investigate the relationship between order priority and delivery performance.
+
+### Business Value
+
+- Identify delivery performance issues.
+- Understand shipping mode performance.
+- Recognize regions experiencing delivery delays.
+- Support better logistics planning.
+- Improve order fulfillment efficiency.
+- Reduce potential customer dissatisfaction.
+
+---
+
+# 💰  Profitability Analysis
+
+Profitability analysis evaluates how effectively the company converts its sales into profit.
+
+High sales do not necessarily indicate strong financial performance. Therefore, this analysis focuses on understanding the factors that may contribute to profit generation and financial losses.
+
+### Key Analytical Areas
+
+**1. Overall Sales and Profit Analysis**
+
+- Total sales.
+- Total profit.
+- Average profit per order.
+- Profit distribution.
+
+**2. Profit Distribution Analysis**
+
+Examine the distribution of profit per order using histograms and box plots.
+
+Identify:
+
+- Profitable transactions.
+- Loss-making transactions.
+- Extreme profit and loss values.
+- Overall profit distribution.
+
+**3. Loss-Making Transaction Analysis**
+
+Identify transactions with negative profit and investigate their distribution across different business dimensions.
+
+**4. Category-Wise Profitability**
+
+Compare profit contribution across product categories.
+
+**5. Customer Segment Profitability**
+
+Understand which customer segments contribute positively or negatively to profitability.
+
+**6. Market-Wise Profitability**
+
+Compare profitability across different markets and geographical regions.
+
+**7. Discount Impact Analysis**
+
+Investigate the relationship between discounts and profit to understand whether higher discounts are associated with lower profitability.
+
+**8. Shipping and Profitability**
+
+Explore the relationship between shipping-related factors and order-level profit.
+
+### Business Value
+
+- Identify loss-making transactions.
+- Understand profitability variations.
+- Evaluate discount-related financial patterns.
+- Recognize profitable product categories and customer segments.
+- Support better pricing and promotional decisions.
+- Identify potential opportunities to improve profit margins.
+
+---
+# 🔍 8. Key Analytical Findings
+
+The following findings are based on the completed dataset analysis.
+
+### Dataset Overview
+
+- Original dataset contained 180,519 records.
+- After cleaning and preprocessing, the dataset contained 172,765 records and 43 columns.
+- The cleaned dataset contains 62,897 unique orders.
+
+### Delivery Performance
+
+- Approximately 54.7% of records were classified as late deliveries.
+- This indicates a significant delivery performance concern that requires further investigation.
+- Delivery performance can be examined across shipping modes, geographical regions, and order priorities.
+
+### Profitability
+
+- 32,295 records had negative order-level profit values.
+- This highlights the presence of a considerable number of loss-making order-item records.
+- Further analysis of discounts, product categories, customer segments, and shipping-related factors can help investigate profitability variations.
+
+### Product Movement
+
+- Products were classified into fast-, medium-, and slow-moving categories using historical quantity distribution.
+- This classification helps identify differences in product demand and supports demand-based inventory planning.
+
+**Important:** The above figures represent dataset-level observations. The loss-making record count is not necessarily the number of unique loss-making orders. Similarly, the late delivery percentage is based on the analyzed records and should not automatically be interpreted as a unique-order delivery rate.
+
+---
+
+# 💡 9.Business Recommendations
+
+Based on the analytical areas and observed patterns, the following recommendations can support better supply chain operations.
+
+### 1. Improve Demand Planning
+
+Use historical product demand and sales trends to identify products with consistently high and low demand.
+
+### 2. Implement Demand-Based Inventory Planning
+
+Use fast-, medium-, and slow-moving product classifications to support inventory allocation and product replenishment decisions.
+
+Actual stock optimization would require additional information such as current stock levels, lead times, and reorder points.
+
+### 3. Improve Delivery Performance
+
+Investigate the operational factors associated with late deliveries and review shipping mode performance to identify opportunities for improving order fulfillment.
+
+### 4. Monitor Regional Logistics Performance
+
+Identify geographical areas experiencing higher delivery delays and investigate possible transportation and fulfillment challenges.
+
+### 5. Review Discount Strategies
+
+Evaluate how discounts relate to order-level profitability and review promotional strategies that may contribute to negative profit.
+
+### 6. Monitor Profitability
+
+Track profit across product categories, customer segments, and markets to identify areas requiring financial improvement.
+
+### 7. Establish Continuous Performance Monitoring
+
+Monitor important KPIs such as sales, profit, demand, late delivery rate, and average shipping days to evaluate supply chain performance over time.
+
+---
+
+
+# 📉 10. Visualizations
+
+## 📊  Power BI Dashboard
+
+A Power BI dashboard is planned as a business intelligence presentation layer for communicating the results of the Python analysis.
+
+### Proposed Dashboard Pages
+
+**Page 1: Executive Overview**
+
+KPIs:
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Quantity
+- Late Delivery Rate
+
+Visualizations:
+- Sales and profit trends.
+- Sales by market.
+- Profit by customer segment.
+- Delivery status distribution.
+
+**Page 2: Inventory and Demand Analysis**
+
+Visualizations:
+- Top 10 products by quantity.
+- Fast-, medium-, and slow-moving product distribution.
+- Category-wise demand.
+- Market-wise demand.
+- Product quantity trends.
+
+**Page 3: Logistics and Delivery Performance**
+
+Visualizations:
+- Delivery status distribution.
+- Late delivery rate by shipping mode.
+- Average shipping days.
+- Scheduled vs actual shipping days.
+- Regional delivery performance.
+- Delivery risk analysis.
+
+**Page 4: Profitability Analysis**
+
+Visualizations:
+- Total profit and sales.
+- Profit distribution.
+- Profitable vs loss-making records.
+- Profit by product category.
+- Profit by customer segment.
+- Discount vs profit analysis.
+- Market-wise profitability.
+
+The dashboard will help business stakeholders explore supply chain performance and understand the key factors affecting operational efficiency and profitability.
+
+---
+
+The proposed dashboard will provide an interactive overview of supply chain performance.
 
 ![Image](Image/Image1.png)
 ![Image](Image/Image2.png)
 ![Image](Image/Image3.png)
 ![Image](Image/Image4.png)
 
-## 💡 10. Expected Business Value
+# ⚠️ 11. Project Limitations
 
-The analysis is intended to support a better understanding of supply chain operations.
+- The dataset contains historical transactional information rather than real-time supply chain data.
+- Actual warehouse stock levels are not directly available for complete inventory optimization.
+- Product movement classification is based on historical demand and does not represent actual stock movement.
+- Future demand forecasting requires additional time-series validation and forecasting methods.
+- Delivery analysis depends on the accuracy and definitions of the available shipping and delivery fields.
+- The analysis identifies relationships and patterns but does not establish causation.
 
-Potential areas of business value include:
+---
 
-* **Operational monitoring:** Understand order and shipping performance using validated metrics.
-* **Product analysis:** Identify differences in recorded sales and order quantities across product categories.
-* **Geographical analysis:** Understand where order activity is concentrated.
-* **Delivery analysis:** Investigate differences in shipping durations and available delivery outcomes.
-* **Data quality:** Identify inconsistencies that could affect operational reporting.
-* **Decision support:** Translate verified analytical patterns into practical recommendations for further investigation.
+# 🚀 12. Future Enhancements
 
-These are intended applications of the analysis, not confirmed findings. Final recommendations will be based on the actual results.
+Potential future improvements include:
 
-## 📁 11. GitHub Repository Structure
+- Implementing time-series demand forecasting.
+- Developing predictive models for late delivery risk.
+- Incorporating actual inventory and warehouse stock data.
+- Performing customer demand segmentation.
+- Building an interactive Power BI dashboard.
+- Developing automated supply chain KPI monitoring.
+- Exploring machine learning techniques for delivery performance prediction.
+
+---
+
+
+
+## 📁 13. GitHub Repository Structure
 
 The repository can be organized as follows:
 
@@ -577,7 +963,7 @@ DataCo_SMART_Supply_Chain/
 
 **Data handling:** Review the dataset's license, terms, size, and privacy considerations before sharing any source or processed data publicly. If the dataset should not be redistributed, provide instructions for obtaining it from the original source instead.
 
-## ⚙️ 12. Installation and Setup
+## ⚙️ 14. Installation and Setup
 
 ### Prerequisites
 
@@ -637,51 +1023,10 @@ Open the notebooks in numerical order and execute the cells from top to bottom.
 
 **Note:** The exact filename and file format must be verified after downloading the dataset. Update the loading code accordingly.
 
-## 📝 13. Results and Key Findings
 
-This section will be updated after completing the analysis.
 
-The final version should summarize:
 
-* Important data-quality observations.
-* Key patterns in order volume and sales.
-* Product and geographical differences.
-* Shipping-duration and delivery-performance patterns, where supported.
-* Relevant statistical relationships.
-* Evidence-based business recommendations.
-* Limitations affecting the interpretation of results.
-
-**Current status:** Analysis results have not yet been documented in this README. No numerical findings or business conclusions are claimed at this stage.
-
-## ⚠️ 14. Project Limitations
-
-The analysis is subject to the fields and data quality of the selected dataset version.
-
-Key limitations include:
-
-* The dataset may not contain actual delivery dates or scheduled delivery dates needed to calculate date-based OTD.
-* A late-delivery-risk field may represent risk classification rather than an actual delivery outcome.
-* Recorded order quantities do not necessarily represent warehouse stock movements.
-* Inventory balances, reorder points, and stockout indicators may not be available.
-* Shipping cost variance requires actual and expected or budgeted shipping cost fields.
-* Time-series conclusions depend on date validity and historical coverage.
-* Order-level metrics require correct handling of transaction-level records to avoid double-counting.
-
-The project will not claim actual inventory optimization, stockout prediction, shipping cost variance, or route-efficiency improvements without the necessary supporting data.
-
-## 🚀 15. Future Improvements
-
-Possible extensions, depending on data availability and project requirements, include:
-
-* Additional data-quality validation and automated reporting.
-* More detailed product and regional comparisons.
-* Improved visualization and reporting of supply chain metrics.
-* Integration of additional operational data if a suitable source becomes available.
-* Forecasting or delivery-risk modeling as a separate extension, subject to valid targets, suitable features, and appropriate validation.
-
-These extensions are not part of the current core project scope.
-
-## 👩‍💻 16. Skills Demonstrated
+## 👩‍💻 15. Skills Demonstrated
 
 This project is intended to demonstrate the following Data Analyst skills:
 
@@ -698,7 +1043,7 @@ This project is intended to demonstrate the following Data Analyst skills:
 * Analytical interpretation and reporting
 * GitHub project documentation
 
-## 📚 17. References
+## 📚 16. References
 
 **Dataset:** DataCo SMART Supply Chain for Big Data Analysis
 
@@ -709,9 +1054,30 @@ https://data.mendeley.com/datasets/8gx2fvg2k6/5
 
 ---
 
-### 📌 Project Summary
+# 🎓 17. Conclusion
 
-**Supply Chain Analytics Using Python** is a data analytics portfolio project focused on understanding supply chain operations through data cleaning, exploratory analysis, statistical summaries, visualization, and evidence-based recommendations.
+This project demonstrates how Python-based data analytics can be used to investigate supply chain operations and identify business performance issues.
 
-The project aims to demonstrate how Python can be used to transform raw operational data into clear, useful analytical insights while maintaining transparency about data quality, metric definitions, and analytical limitations.
+By analyzing historical transactional data, the project explores product demand, inventory-related product movement, logistics performance, delivery delays, and profitability.
+
+The findings highlight important operational and financial challenges, including a high proportion of late delivery records and the presence of loss-making transactions.
+
+The analysis also demonstrates the importance of understanding product demand patterns, evaluating delivery performance, and monitoring profitability rather than relying only on sales figures.
+
+Overall, this project provides a practical application of data analytics in supply chain management and demonstrates how data-driven insights can support better operational planning, logistics decisions, and business performance improvement.
+
+---
+
+## 👩‍💻 Author
+
+**Siniya V.**
+
+Aspiring Data Analyst | Python | SQL | Power BI | Data Visualization
+
+- LinkedIn: [linkedin.com/in/siniya-v-h](https://www.linkedin.com/in/siniya-v-h)
+- GitHub: [Add your GitHub profile link]
+
+---
+
+⭐ If you find this project interesting, consider giving the repository a star!
 
