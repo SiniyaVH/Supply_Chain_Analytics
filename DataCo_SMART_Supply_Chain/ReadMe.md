@@ -515,6 +515,9 @@ The following metrics will be calculated where the necessary fields are availabl
 | Average sales per order   | Validated sales total divided by distinct orders                                       | Understand average sales per order |
 | Average daily demand      | Recorded units over the analysis period divided by the number of calendar days         | Estimate recorded demand over time |
 
+![Image](Image/Image5.png)
+
+
 ### Metric Validation
 
 Metrics will be calculated only after checking the relevant fields, definitions, and aggregation levels.
@@ -523,24 +526,12 @@ For example, if an order contains multiple transaction rows, counting rows as un
 
 Similarly, a source-provided late-delivery-risk label will not automatically be treated as evidence that a delivery was actually late.
 
-## 📉 9. Planned Visualizations
+## 📉 9. Visualizations
 
-The project may include the following charts, depending on the data available:
-
-| Visualization                      | Analytical purpose                                             |
-| ---------------------------------- | -------------------------------------------------------------- |
-| Missing-value summary              | Understand data completeness                                   |
-| Numerical histograms               | Examine distributions                                          |
-| Box plots                          | Investigate spread and potential outliers                      |
-| Sales by product category          | Compare product-category performance                           |
-| Order volume by region             | Explore geographical order patterns                            |
-| Shipping duration by shipping mode | Compare shipping-duration distributions                        |
-| Shipping-delay distribution        | Investigate delays where calculable                            |
-| Daily or monthly order trends      | Examine changes in order activity                              |
-| Order-benefit distribution         | Understand the distribution of recorded order benefits         |
-| Correlation heatmap                | Investigate relationships between selected numerical variables |
-
-Each major visualization will include a descriptive title, readable axis labels, an appropriate legend where necessary, and a short interpretation.
+![Image](Image/Image1.png)
+![Image](Image/Image2.png)
+![Image](Image/Image3.png)
+![Image](Image/Image4.png)
 
 ## 💡 10. Expected Business Value
 
