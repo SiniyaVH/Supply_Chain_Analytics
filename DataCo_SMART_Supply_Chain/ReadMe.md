@@ -62,7 +62,7 @@ The primary Analytical objective is to identify the key factors contributing to 
 
 #### Specific Analytical Objectives:
 
-    1. Evaluate Supply Chain Profitability: Analyse sales, profit distribution, loss-making transactions, and category-level profitability to understand financial                performance.
+    1. Evaluate Supply Chain Profitability: Analyse sales, profit distribution, loss-making transactions, and category-level profitability to understand financial performance.
     
     2. Analyse Product Demand: Identify high-demand and low-demand products, category-level purchasing patterns, and geographical demand variations.
     
@@ -72,7 +72,7 @@ The primary Analytical objective is to identify the key factors contributing to 
     
     5. Identify Operational Bottlenecks: Examine order fulfilment and delivery patterns to identify areas requiring operational improvements.
     
-    6. Develop Business Recommendations: Translate analytical findings into practical recommendations for improving inventory efficiency, logistics reliability, and              profitability.
+    6. Develop Business Recommendations: Translate analytical findings into practical recommendations for improving inventory efficiency, logistics reliability, and profitability.
 
 ---
 
