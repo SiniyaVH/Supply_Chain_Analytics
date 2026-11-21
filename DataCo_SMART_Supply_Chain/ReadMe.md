@@ -1078,7 +1078,7 @@ Overall, this project provides a practical application of data analytics in supp
 
 ## 👩‍💻 Author
 
-**Siniya V.**
+**Siniya V.H**
 
 Aspiring Data Analyst | Python | SQL | Power BI | Data Visualization
 
