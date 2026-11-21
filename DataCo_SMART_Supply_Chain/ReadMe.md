@@ -40,8 +40,10 @@ The ultimate goal is to identify the factors affecting supply chain efficiency a
 
 ## 🎯 2. Business Problem
 
-The company experiences strong market demand and generates substantial sales. However, operational inefficiencies in order fulfillment and logistics create challenges that affect overall business performance.
-
+The primary business problem is poor supply chain and delivery performance, which is causing substantial profit leakage despite strong sales and customer demand.
+The company has strong market demand but suffers from severe order fulfilment and logistics inefficiencies, leading to excessive delivery delays, financial losses, and a high number of loss-making transactions.
+Despite generating substantial sales revenue, the business faces challenges in maintaining delivery commitments, managing product demand efficiently, and ensuring that transactions remain profitable.
+These challenges highlight the need for a comprehensive analysis of supply chain operations to identify the underlying factors affecting operational efficiency and financial performance.
 The major business concerns include:
 
 1. **Delivery Delays:** A significant proportion of orders experience late delivery, indicating potential inefficiencies in logistics and order fulfillment.
@@ -54,11 +56,17 @@ The major business concerns include:
 
 5. **Logistics Performance:** Shipping modes, scheduled delivery days, actual shipping days, and delivery risks influence the overall customer fulfillment experience.
 
-### Analytical Goal
+### Analytical Objectives
 
-To identify the major factors affecting supply chain efficiency and profitability by analyzing historical demand, product movement, delivery performance, logistics operations, and order-level financial performance.
+The primary Analytical objective is to identify the key factors contributing to supply chain inefficiencies, delivery delays, and profit losses by analysing sales, demand, inventory, order fulfilment, and logistics performance.
 
-The project aims to generate actionable insights that can support better demand planning, inventory decisions, logistics performance, and profitability improvement.
+#### Specific Analytical Objectives:
+    1. Evaluate Supply Chain Profitability: Analyse sales, profit distribution, loss-making transactions, and category-level profitability to understand financial     performance.
+    2. Analyse Product Demand: Identify high-demand and low-demand products, category-level purchasing patterns, and geographical demand variations.
+    3. Evaluate Inventory Movement: Classify products into fast-moving, medium-moving, and slow-moving categories to support better inventory planning.
+    4. Assess Logistics Performance: Investigate delivery delays, shipping methods, scheduled versus actual shipping durations, and regional delivery performance.
+    5. Identify Operational Bottlenecks: Examine order fulfilment and delivery patterns to identify areas requiring operational improvements.
+    6. Develop Business Recommendations: Translate analytical findings into practical recommendations for improving inventory efficiency, logistics reliability, and profitability.
 
 ---
 
