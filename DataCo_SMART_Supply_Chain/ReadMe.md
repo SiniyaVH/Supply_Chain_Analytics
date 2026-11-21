@@ -40,90 +40,47 @@ The ultimate goal is to identify the factors affecting supply chain efficiency a
 
 ## 🎯 2. Business Problem
 
-The primary business problem is poor supply chain and delivery performance, which is causing substantial profit leakage despite strong sales and customer demand.
-The company has strong market demand but suffers from severe order fulfilment and logistics inefficiencies, leading to excessive delivery delays, financial losses, and a high number of loss-making transactions.
-Despite generating substantial sales revenue, the business faces challenges in maintaining delivery commitments, managing product demand efficiently, and ensuring that transactions remain profitable.
-These challenges highlight the need for a comprehensive analysis of supply chain operations to identify the underlying factors affecting operational efficiency and financial performance.
-The major business concerns include:
+The primary business problem is poor supply chain and delivery performance, which is causing substantial profit leakage despite strong sales and customer demand. The company has strong market demand but suffers from severe order fulfilment and logistics inefficiencies, leading to excessive delivery delays, financial losses, and a high number of loss-making transactions.
 
-1. **Delivery Delays:** A significant proportion of orders experience late delivery, indicating potential inefficiencies in logistics and order fulfillment.
+The problem shows up in the data in three ways:
 
-2. **Product Movement:** Different products have different demand patterns. Understanding fast-, medium-, and slow-moving products is important for effective inventory planning.
-
-3. **Demand Variations:** Product demand varies across categories, customer segments, markets, and geographical regions.
-
-4. **Profitability Issues:** Despite generating sales, the company experiences loss-making transactions, suggesting that discounts, shipping expenses, and other order-level factors may affect profitability.
-
-5. **Logistics Performance:** Shipping modes, scheduled delivery days, actual shipping days, and delivery risks influence the overall customer fulfillment experience.
-
-### Analytical Objectives
-
-The primary Analytical objective is to identify the key factors contributing to supply chain inefficiencies, delivery delays, and profit losses by analysing sales, demand, inventory, order fulfilment, and logistics performance.
-
-#### Specific Analytical Objectives:
-
-    1. Evaluate Supply Chain Profitability: Analyse sales, profit distribution, loss-making transactions, and category-level profitability to understand financial performance.
-    
-    2. Analyse Product Demand: Identify high-demand and low-demand products, category-level purchasing patterns, and geographical demand variations.
-    
-    3. Evaluate Inventory Movement: Classify products into fast-moving, medium-moving, and slow-moving categories to support better inventory planning.
-    
-    4. Assess Logistics Performance: Investigate delivery delays, shipping methods, scheduled versus actual shipping durations, and regional delivery performance.
-    
-    5. Identify Operational Bottlenecks: Examine order fulfilment and delivery patterns to identify areas requiring operational improvements.
-    
-    6. Develop Business Recommendations: Translate analytical findings into practical recommendations for improving inventory efficiency, logistics reliability, and profitability.
-
+| Symptom | Evidence from the notebook |
+|---|---|
+| Strong demand and sales | $35.2M total sales, 367,591 units, 20,261 customers, average order value $560 |
+| Excessive delivery delays | 54.69% of orders arrive later than scheduled (34,400 of 62,897 orders) |
+| Financial leakage | $3.7M of loss on loss-making lines, against $7.5M of positive profit, leaving a net profit of $3.8M |
+| High number of loss-making transactions | 32,295 of 172,765 order lines (18.69%) have negative profit |
 ---
 
-## 🎯 3. Project Objectives
+## 🎯 3.Objective
 
-The primary objectives of this project are:
+To identify the key factors contributing to supply chain inefficiencies, delivery delays, and profit losses by analysing sales, demand, inventory, order fulfilment, and logistics performance.
 
-- Analyze historical sales and product demand patterns.
-- Identify high-demand and low-demand products.
-- Classify products based on their movement as fast-, medium-, and slow-moving.
-- Understand demand distribution across product categories, markets, and geographical regions.
-- Evaluate delivery performance and identify factors associated with late deliveries.
-- Analyze shipping modes and their relationship with delivery performance.
-- Investigate the distribution of profit and identify loss-making transactions.
-- Examine the relationship between discounts, sales, and profitability.
-- Identify operational inefficiencies and potential areas for improvement.
-- Develop data-driven business recommendations.
+### Supporting objectives
+
+1. Clean, preprocess and transform the dataset for accurate analysis.
+2. Establish overall performance through business KPIs.
+3. Analyse demand across products, categories, segments and regions.
+4. Classify products as fast-, medium- or slow-moving from historical quantities.
+5. Evaluate sales and profitability, including the role of discounts and prices.
+6. Compare scheduled and actual shipping durations.
+7. Examine delivery delays by shipping mode and region.
+8. Turn the patterns into data-driven recommendations.
 
 ---
 
 ## 📂 4. Dataset Information
 
-**Dataset Name:** DataCo SMART Supply Chain for Big Data Analysis
-
-**Source:** Mendeley Data
-
-**Dataset Link:**
-https://data.mendeley.com/datasets/8gx2fvg2k6/5
-
-The dataset is intended to support analysis of supply chain and transactional operations. The exact structure, column definitions, and available measures will be verified after downloading the selected dataset version.
-
-### Dataset Information to Document
-**Original Dataset Size:**
-- Total Records: 180,519
-- Contains customer, order, product, sales, shipping, delivery, and financial information.
-
-
-| Attribute         | Description                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------ |
-| Dataset name      | DataCo SMART Supply Chain                                                            |
-| Source            | Mendeley Data                                                                        |
-| File format       | csv                                                                                  |
-| Number of rows    | 180519                                                                               |
-| Number of columns | 53                                                                                   |
-| Data types        | int64, Str, float64                                                                  |              
-| Domain            | Supply Chain                                                                         |
-
-**Cleaned Dataset Size:**
-- Total Records: 172,765
-- Total Columns: 43
-### Important Dataset Attributes
+| Item | Detail |
+|---|---|
+| Name | DataCo SMART Supply Chain for Big Data Analysis |
+| Source | Mendeley Data |
+| Link | https://data.mendeley.com/datasets/8gx2fvg2k6/5 |
+| Raw size | 180,519 rows and 53 columns |
+| Cleaned size | 172,765 rows and 43 columns |
+| Period | Orders from 1 January 2015 to 31 January 2018 |
+| Unit of observation | One order line (`Order Item Id`); one order (`Order Id`) can have several lines |
+| Coverage | 62,897 orders, 20,261 customers, 118 products, 50 categories, 11 departments, 5 markets, 23 regions, 164 countries |
 
 | Category | Important Columns |
 |---|---|
@@ -134,8 +91,8 @@ The dataset is intended to support analysis of supply chain and transactional op
 | Sales Information | Sales, Order Item Total |
 | Profitability | Order Profit Per Order |
 | Discount | Order Item Discount, Order Item Discount Rate |
-| Shipping | Shipping Mode, Days for Shipping (Scheduled) |
-| Delivery | Days for Shipping (Real), Delivery Status, Late Delivery Risk |
+| Shipping | Shipping Mode, Scheduled Shipping days |
+| Delivery | Actual Shipping Days, Delivery Status, Late Delivery Risk |
 | Geographical Information | Market, Order Region, Order Country |
 
 The dataset contains historical transactional information that allows the analysis of customer demand, product movement, delivery operations, and financial performance.
@@ -144,32 +101,21 @@ The dataset contains historical transactional information that allows the analys
 
 ## 🛠️ 5. Technologies and Tools Used
 
-The project uses Python and its data analytics ecosystem.
 
-| Technology | Purpose |
+| Technology | Purpose in this project |
 |---|---|
-| Python | Main programming language |
-| Jupyter Notebook | Development and analysis environment |
-| Pandas | Data manipulation, cleaning, and aggregation |
-| NumPy | Numerical calculations and feature engineering |
-| Matplotlib | Statistical and exploratory visualizations |
-| Seaborn | Statistical data visualization |
-| Plotly | Interactive data visualizations |
-| Power BI | Planned business intelligence dashboard |
+| Python | Overall analytical workflow |
+| NumPy | Conditional logic (`np.select`, `np.where`) and numerical operations |
+| Pandas | Cleaning, type conversion, feature creation, grouping and aggregation |
+| Matplotlib | Static charts (distributions, KPI dashboard, bar charts) |
+| Seaborn | Statistical charts (histograms, heatmaps, scatter plots) |
+| Plotly | Interactive pie, bar, line and scatter charts |
+| Jupyter Notebook | Development and documentation of the workflow |
+| Power BI | Dashboard |
 
 **Note:** The core data cleaning, analysis, calculations, and exploratory visualizations are performed using Python. Power BI is intended for the separate dashboard presentation layer.
 
 ---
-The project focused on:
-
-* Data cleaning and preprocessing
-* Feature engineering
-* Exploratory Data Analysis
-* Descriptive and statistical analysis
-* Data visualization
-* Business insights and recommendations
-
-Machine learning and predictive demand forecasting are outside the core project scope.
 
 ## 🔄 6. Project Workflow
 
@@ -491,304 +437,190 @@ The final phase focuses on interpreting analytical results and translating them 
 
 EDA helps understand the overall characteristics of the dataset and identify important patterns before performing deeper business analysis.
 
-## 📈 Key Supply Chain Metrics
+## 📈  Analysis Performed & Key Findings
+
+### Key Business Questions
+
+| # | Business question | Analysis used |
+|---|---|---|
+| 1 | How large is the business, and how profitable is it? | KPI dashboard |
+| 2 | How many transactions lose money, and where? | Profit distribution; loss by category and shipping mode |
+| 3 | Do discounts or prices explain losses? | Discount versus profit scatter; correlation matrix |
+| 4 | Which products and categories have high or low demand? | Top and bottom products; category demand; movement classification |
+| 5 | Where is demand geographically concentrated? | Market, region and country demand |
+| 6 | How does demand change over time? | Monthly demand by year |
+| 7 | How do scheduled and actual shipping times compare? | Scheduled versus actual by shipping mode |
+| 8 | Which shipping modes and regions are late most often? | Late % by mode; regional late %; delay heatmap |
+| 9 | How much profit sits on delayed orders? | Profit at Risk by mode and region |
+
+
+### Key Performance Indicators
 
 The following metrics will be calculated where the necessary fields are available.
 
-| Metric                    | Definition                                                                             | Purpose                            |
-| ------------------------- | -------------------------------------------------------------------------------------- | ---------------------------------- |
-| Total order records       | Number of valid transaction records                                                    | Understand dataset volume          |
-| Unique orders             | Number of distinct order identifiers                                                   | Measure distinct orders            |
-| Total sales               | Sum of the validated sales field                                                       | Assess recorded sales              |
-| Total order quantity      | Sum of recorded order quantities                                                       | Understand recorded unit volume    |
-| Average shipping duration | Average of valid actual shipping durations                                             | Examine shipping performance       |
-| Average shipping delay    | Average difference between actual and scheduled shipping duration                      | Investigate shipping delays        |
-| On-Time Delivery (OTD) %  | Eligible on-time deliveries divided by total eligible deliveries, multiplied by 100    | Measure delivery performance       |
-| Late-delivery rate        | Eligible orders classified as late divided by total eligible orders, multiplied by 100 | Examine late-delivery outcomes     |
-| Average sales per order   | Validated sales total divided by distinct orders                                       | Understand average sales per order |
-| Average daily demand      | Recorded units over the analysis period divided by the number of calendar days         | Estimate recorded demand over time |
+| KPI | Value | Definition |
+|---|---|---|
+| Total sales | $35.2M | Sum of `Sales` |
+| Unique orders | 62,897 | Unique `Order Id` |
+| Order lines | 172,765 | Rows after cleaning |
+| Customers | 20,261 | Unique `Customer Id` |
+| Units sold | 367,591 | Sum of `Order Item Quantity`
+ |
+| Average order value | $560 | Mean of sales summed per order |
+| Average sales per line | $204 | Mean of `Sales` |
+| Positive profit | $7.5M | Sum of profit on profitable lines |
+| Total loss | $3.7M | Sum of the absolute value of negative profit |
+| Net profit | $3.8M | Positive profit minus loss (about 10.8% of sales) |
+| Loss-making lines | 32,295 (18.69%) | Lines with negative profit |
+| Loss-making orders | 4,401 (7.0%) | Orders whose highest line profit is negative |
+| Late orders | 34,400 (54.69%) | Orders with at least one line delayed |
+| On-time orders | 21.26% | Delay equal to 0 |
+| Early orders | 24.05% | Delay below 0 |
+| Average delay (late lines) | 1.65 days | Mean of Delay where Delay > 0 |
+| 90th percentile delay | 3.00 days | Same group |
+| Average daily demand | 326.17 units | Units divided by distinct order dates |
 
 ![Image](Image/Image5.png)
 
 
-### Metric Validation
+## Important Findings with Visualizations
 
-Metrics will be calculated only after checking the relevant fields, definitions, and aggregation levels.
+### Finding 1: Delivery lateness is the largest operational problem
 
-For example, if an order contains multiple transaction rows, counting rows as unique orders or summing repeated order-level values may produce misleading results.
+More than half of all deliveries miss their schedule. On line records, **54.71% are late** (94,523 lines), 24.07% are early (41,592) and only 21.21% are on time (36,650).
 
-Similarly, a source-provided late-delivery-risk label will not automatically be treated as evidence that a delivery was actually late.
+**Visual:** 
+![Image](Image/Image6.png)
 
-###  Univariate Analysis
+### Finding 2: The premium shipping modes are the ones failing their promise
 
-Univariate analysis examines individual variables independently.
+| Shipping mode | Share of lines | Scheduled days | Actual days | Late orders |
+|---|---|---|---|---|
+| First Class | 15.3% | 1 | 2 | **100.00%** |
+| Second Class | 19.6% | 2 | 4 | **79.99%** |
+| Standard Class | 59.7% | 4 | 4 (range 2 to 6) | 39.85% |
+| Same Day | 5.4% | 0 | 0 | 0.00% |
 
-The following variables were explored:
+First Class is promised in 1 day and always takes 2. Second Class is promised in 2 days and averages 4. Standard Class meets its average promise but spreads from 2 to 6 days against a 4-day promise, which is why about 40% of its orders are late. Same Day never misses.
 
-- Sales distribution
-- Profit per order distribution
-- Product quantity distribution
-- Order quantity distribution
-- Customer segment distribution
-- Shipping mode distribution
-- Order status distribution
-- Delivery status distribution
+Overall, the average scheduled duration is 2.93 days against about 3.5 days actual, a gap of roughly 0.55 days.
 
-**Visualizations:**
-- Histograms
-- Box plots
-- Count plots
-- Distribution plots
-- Bar charts
+**Visuals:** 
+![Image](Image/Image7.png)    ![Image](Image/Image8.png)
 
-### Bivariate Analysis &  Multivariate Analysis
+### Finding 3: Delay is systemic across the network, not regional
 
-Bivariate analysis examines relationships between two variables.
-Multivariate analysis examines multiple variables simultaneously to understand more complex business relationships.
+Late delivery % by region sits in a narrow band, from 50.83% (Canada) to 58.66% (Central Africa). Most regions are between 52% and 56%.
 
-The following relationships were investigated:
-
-| Analysis | Business Purpose |
+| Region group | Late delivery % |
 |---|---|
-| Sales vs Customer Segment | Understand sales contribution by customer segment |
-| Profit vs Product Category | Identify profitable and loss-making categories |
-| Shipping Mode vs Delivery Status | Compare delivery performance across shipping modes |
-| Discount vs Profit | Examine the relationship between discounts and profitability |
-| Quantity vs Product Category | Understand product demand across categories |
-| Market vs Sales | Compare sales performance across markets |
-| Delivery Risk vs Delivery Status | Understand the relationship between delivery risk and actual delivery outcomes |
+| Highest | Central Africa 58.66%, Southeast Asia 55.97%, Eastern Europe 55.96%, South of USA 55.93% |
+| Typical | Western Europe 55.79%, Central America 54.71%, Central Asia 54.06% |
+| Lowest | Canada 50.83%, Southern Africa 52.27%, West Africa 52.48% |
 
-- Correlation between numerical variables.
-- Relationship between shipping performance and delivery risk.
-- Product demand across different markets and categories.
-- Profitability across customer segments and regions.
-- Comparison of shipping modes and delivery performance.
+The average-delay heatmap by region and mode shows the same story. Second Class averages roughly 1.9 to 2.2 days late in every region (highest in Central Asia at 2.22), First Class about 1 day late everywhere, and Same Day and Standard Class close to zero. The driver is the **shipping mode**, not the geography.
 
----
+**Visuals:** 
+![Image](Image/Image9.png)  ![Image](Image/Image10.png)
 
-# 📦  Inventory Management and Product Movement Analysis
+### Finding 4: Loss-making lines are spread evenly, and are not explained by shipping mode or discount
 
-Inventory management is important for maintaining product availability while avoiding unnecessary inventory holding costs.
+| Shipping mode | Loss-making lines | Loss rate (derived) |
+|---|---|---|
+| Standard Class | 19,439 | 18.8% |
+| Second Class | 6,265 | 18.5% |
+| First Class | 4,832 | 18.2% |
+| Same Day | 1,759 | 18.9% |
 
-This project uses historical product demand to understand product movement patterns.
+- Loss rates are almost identical across modes, even though lateness ranges from 0% to 100%.
+- Mean discount is 20.66 on loss lines and 20.68 on profitable lines. There is no gap.
+- The correlation matrix agrees: discount rate versus profit is âˆ’0.02, and actual or scheduled shipping days versus profit are 0.00.
+- Large categories all lose on about 18.6% to 18.9% of lines. The highest rates are in small categories: Men's Clothing 24.24% (198 lines), Health and Beauty 23.41% (346), Video Games 21.77% (804) and Golf Shoes 21.71% (502).
+- The most loss-making lines by count are in the biggest categories: Cleats 4,389, Men's Footwear 3,993, Women's Apparel 3,745, Indoor/Outdoor Games 3,471 and Fishing 3,047.
+- Profit per line is heavily skewed: mean 22.03, median 31.52, standard deviation 104.36, with a long negative tail down to âˆ’4,274.98.
 
-Since the dataset primarily contains transactional information rather than actual warehouse stock levels, inventory analysis focuses on historical demand and product movement instead of calculating actual stock availability or reorder quantities.
+**Interpretation.** On this data, late delivery and loss-making are two separate problems that both exist at scale. The data does **not** show that delays cause the losses. What drives the loss tail is still unexplained and needs cost-level detail.
 
-### Key Analytical Areas
+**Visuals:** profit-per-order histogram with box plot; discount versus profit scatter; sales versus profit scatter by segment.
 
-**1. Product Quantity Analysis**
+### Finding 5: Profit at Risk is large but mostly follows volume
 
-Analyze the total quantity ordered for each product to identify high-demand and low-demand products.
+**$4.11M, or 54.71% of all positive profit**, sits on delayed lines. By mode it is roughly $1.8M for Standard Class, and $1.2M each for Second Class and First Class. By region it is highest in Western Europe and Central America (about $0.65M each), then South America (about $0.33M). The ranking mirrors order volume, which fits the finding that delay is spread evenly.
 
-**2. Product Movement Classification**
+Profit at Risk is an exposure measure (positive profit on late lines), not realised loss.
 
-Products are classified into three categories based on their total historical quantity sold.
+**Visuals:**
+![Image](Image/Image11.png) ![Image](Image/Image12.png)
 
-| Product Movement | Description |
+
+### Finding 6: Demand is concentrated in a few products and categories
+
+| Rank | Product | Units |
+|---|---|---|
+| 1 | Perfect Fitness Perfect Rip Deck | 70,575 |
+| 2 | Nike Men's Dri-FIT Victory Golf Polo | 60,232 |
+| 3 | O'Brien Men's Neoprene Life Vest | 55,333 |
+
+| Rank | Category | Units | Revenue |
+|---|---|---|---|
+| 1 | Cleats | 70,611 | $3.82M |
+| 2 | Women's Apparel | 60,232 | $2.71M |
+| 3 | Indoor/Outdoor Games | 55,333 | $2.49M |
+| 4 | Cardio Equipment | 35,937 | $3.17M |
+| 5 | Shop By Sport | 31,329 | $1.13M |
+
+- Revenue and volume do not line up. **Fishing** is the top revenue category ($5.96M) on only 16,595 units, while Cleats leads on volume.
+- The lowest-demand products sell between 8 and 33 units: Bushnell Pro X7 Jolt Slope Rangefinder (8), Bowflex SelectTech 1090 Dumbbells (10), SOLE E25 Elliptical (10), SOLE E35 Elliptical (15).
+- Splitting the 118 products into thirds by quantity gives 33.1% fast, 33.1% medium and 33.9% slow. This is a relative ranking by construction, not evidence of balanced inventory.
+- 54.9% of lines are single-unit purchases.
+
+**Visuals:** 
+ ![Image](Image/Image23.png)
+![Image](Image/Image13.png)   ![Image](Image/Image14.png)  
+ 
+### Finding 7: Demand is geographically concentrated
+
+| Market | Share of units |
 |---|---|
-| Fast-Moving | Products with relatively high demand |
-| Medium-Moving | Products with moderate demand |
-| Slow-Moving | Products with relatively low demand |
+| LATAM | 29.4% |
+| Europe | 27.4% |
+| Pacific Asia | 21.9% |
+| USCA | 14.7% |
+| Africa | 6.7% |
 
-Classification is based on demand distribution and selected quantity thresholds.
+- Top regions: Central America (about 59.5k units), Western Europe (about 53.9k) and South America (about 31k). Central Asia is lowest (about 1.2k).
+- Top countries by units: United States (about 52.0k), Mexico (27.5k), France (26.4k), Germany (19.0k), Brazil (16.5k), Australia (16.1k), United Kingdom (14.6k).
+- By customer segment, Consumer is 51.8% of units (190,522), Corporate 30.4%, Home Office 17.8%.
 
-**3. Category-Wise Product Demand**
+**Visuals:** market donut; region and country bars; segment donut.
+![Image](Image/Image15.png)    ![Image](Image/Image16.png) 
+![Image](Image/Image18.png)    ![Image](Image/Image20.png)
+### Finding 8: Monthly demand is stable until a sharp drop in late 2017
 
-Understand which product categories contribute the highest demand.
+Demand runs at about 10,000 to 11,500 units a month in 2015 and 2016, with no strong seasonality. In 2017 it follows the same pattern to September (about 9,900), then falls to roughly 2,000 to 2,400 units in October, November and December. January 2018 shows about 2,000 units and is the only 2018 month.
 
-**4. Product-Wise Order Analysis**
+By year, order lines are 59,954 (2015), 59,926 (2016), 50,848 (2017) and 2,037 (2018). A drop this abrupt looks more like incomplete data capture than a business change, and needs confirming before any forecast is built.
 
-Identify products with the highest number of orders and highest quantity sold.
+**Visual:** 
+![Image](Image/Image17.png)  
 
-**5. Product Demand and Sales Contribution**
 
-Compare product quantity with sales contribution to understand the relationship between product demand and revenue generation.
+### Finding 9: Correlation analysis
 
-### Business Value
+| Pair | r | Reading |
+|---|---|---|
+| Sales and Product Price | 0.79 | Price drives line sales |
+| Order Quantity and Product Price | âˆ’0.48 | Dearer items are bought in smaller quantities |
+| Actual and Scheduled Shipping Days | 0.53 | Longer promises take longer, as expected |
+| Sales and Profit | 0.13 | Higher sales do not mean proportionally higher profit |
+| Sales and Quantity | 0.11 | Weak |
+| Discount Rate with every other variable | âˆ’0.02 to 0.00 | No linear relationship |
+| Shipping days with Sales, Profit, Price | 0.00 to 0.01 | Logistics and financial performance move independently |
 
-- Identify products with high historical demand.
-- Understand slow-moving product patterns.
-- Support demand-based inventory planning.
-- Improve product assortment decisions.
-- Reduce the risk of excessive inventory accumulation.
-
+**Visual:**
+![Image](Image/Image19.png)
 ---
 
-# 📈  Demand Analysis
-
-Demand analysis helps businesses understand customer purchasing behavior and identify variations in product demand.
-
-This section investigates historical sales and quantity patterns across different dimensions.
-
-### Key Analytical Areas
-
-**1. Overall Demand Analysis**
-
-- Total order quantity.
-- Average order quantity.
-- Product demand distribution.
-- Order volume trends.
-
-**2. Product-Wise Demand**
-
-- Highest-demand products.
-- Lowest-demand products.
-- Total quantity sold by product.
-- Number of orders by product.
-
-**3. Category-Wise Demand**
-
-- Total quantity by product category.
-- Category contribution to overall demand.
-- Comparison of demand across categories.
-
-**4. Geographical Demand Analysis**
-
-- Country-wise demand.
-- Market-wise demand.
-- Region-wise order quantity.
-- Customer demand distribution across geographical locations.
-
-**5. Customer Segment Analysis**
-
-- Sales contribution by customer segment.
-- Order quantity by customer segment.
-- Purchasing patterns across customer groups.
-
-### Business Value
-
-- Understand customer purchasing patterns.
-- Identify high-demand product categories.
-- Recognize geographical demand variations.
-- Support demand planning and product allocation.
-- Improve future demand planning decisions.
-
----
-
-# 🚚  Logistics Optimization and Delivery Performance Analysis
-
-Logistics performance directly affects customer satisfaction, order fulfillment, and operational efficiency.
-
-This analysis focuses on understanding delivery performance and identifying factors associated with late shipments.
-
-### Key Analytical Areas
-
-**1. Delivery Status Analysis**
-
-Examine the distribution of:
-
-- Late Delivery
-- Shipping On Time
-- Advance Shipping
-
-Understand the overall delivery performance of the company.
-
-**2. Late Delivery Analysis**
-
-Calculate the percentage of orders delivered late.
-
-Formula:
-
-Late Delivery Rate = (Late Delivered Orders / Total Relevant Delivered Orders) × 100
-
-**3. Shipping Mode Analysis**
-
-Compare delivery performance across different shipping modes.
-
-Examples:
-
-- First Class
-- Second Class
-- Standard Class
-- Same Day
-
-**4. Scheduled vs Actual Shipping Days**
-
-Compare the expected shipping duration with actual shipping duration to understand delivery performance.
-
-**5. Delivery Risk Analysis**
-
-Examine the relationship between delivery risk indicators and actual delivery status.
-
-**6. Regional Delivery Analysis**
-
-Identify geographical areas with relatively higher delivery delays.
-
-**7. Shipping Priority Analysis**
-
-Investigate the relationship between order priority and delivery performance.
-
-### Business Value
-
-- Identify delivery performance issues.
-- Understand shipping mode performance.
-- Recognize regions experiencing delivery delays.
-- Support better logistics planning.
-- Improve order fulfillment efficiency.
-- Reduce potential customer dissatisfaction.
-
----
-
-# 💰  Profitability Analysis
-
-Profitability analysis evaluates how effectively the company converts its sales into profit.
-
-High sales do not necessarily indicate strong financial performance. Therefore, this analysis focuses on understanding the factors that may contribute to profit generation and financial losses.
-
-### Key Analytical Areas
-
-**1. Overall Sales and Profit Analysis**
-
-- Total sales.
-- Total profit.
-- Average profit per order.
-- Profit distribution.
-
-**2. Profit Distribution Analysis**
-
-Examine the distribution of profit per order using histograms and box plots.
-
-Identify:
-
-- Profitable transactions.
-- Loss-making transactions.
-- Extreme profit and loss values.
-- Overall profit distribution.
-
-**3. Loss-Making Transaction Analysis**
-
-Identify transactions with negative profit and investigate their distribution across different business dimensions.
-
-**4. Category-Wise Profitability**
-
-Compare profit contribution across product categories.
-
-**5. Customer Segment Profitability**
-
-Understand which customer segments contribute positively or negatively to profitability.
-
-**6. Market-Wise Profitability**
-
-Compare profitability across different markets and geographical regions.
-
-**7. Discount Impact Analysis**
-
-Investigate the relationship between discounts and profit to understand whether higher discounts are associated with lower profitability.
-
-**8. Shipping and Profitability**
-
-Explore the relationship between shipping-related factors and order-level profit.
-
-### Business Value
-
-- Identify loss-making transactions.
-- Understand profitability variations.
-- Evaluate discount-related financial patterns.
-- Recognize profitable product categories and customer segments.
-- Support better pricing and promotional decisions.
-- Identify potential opportunities to improve profit margins.
-
----
 # 🔍 8. Key Analytical Findings
 
 The following findings are based on the completed dataset analysis.
@@ -921,28 +753,48 @@ The proposed dashboard will provide an interactive overview of supply chain perf
 ![Image](Image/Image3.png)
 ![Image](Image/Image4.png)
 
-# ⚠️ 11. Project Limitations
+# ⚠️ 11. Limitations & Assumptions
 
-- The dataset contains historical transactional information rather than real-time supply chain data.
-- Actual warehouse stock levels are not directly available for complete inventory optimization.
-- Product movement classification is based on historical demand and does not represent actual stock movement.
-- Future demand forecasting requires additional time-series validation and forecasting methods.
-- Delivery analysis depends on the accuracy and definitions of the available shipping and delivery fields.
-- The analysis identifies relationships and patterns but does not establish causation.
+## 1 Analytical Limitations
+
+| # | Limitation | Effect on the findings |
+|---|---|---|
+| 1 | **No stock or replenishment data.** The file holds no warehouse balances, reorder points or stock-outs | "Inventory" analysis is movement of historical sales quantity, not true inventory turnover |
+| 2 | **Demand equals fulfilled orders.** Lost sales and unmet demand are not recorded | Demand is likely understated for stocked-out items |
+| 3 | **No cost structure.** Product cost, carrier cost, penalties and refunds are absent | Root causes of loss lines cannot be separated into pricing, cost or mix |
+| 4 | **No carrier, warehouse or route fields** | Delay causes can be located (mode) but not explained |
+| 5 | **Truncated final months.** October 2017 to January 2018 look incomplete | Trend and seasonality conclusions are unreliable for 2017 onward |
+| 6 | **Association only.** Analysis is descriptive, with no hypothesis tests or models | No claim of cause can be made |
+| 7 | **Scheduled days are a fixed promise per mode** (0, 1, 2 or 4 days) | Lateness largely reflects how the promise is set, not only how the network performs |
+| 8 | **Whole-day shipping calculation** | About 2.6% of lines may sit one day off the supplied value |
+| 9 | **Historical, single-company data (2015 to early 2018)** | May not reflect current operations |
+| 10 | **Order-status mix.** About 54% of lines (93,658) are pending payment, pending, processing, on hold or in payment review, and only 59,491 are COMPLETE | Profit on
+ non-completed orders may still change |
+
+## 2 Key Assumptions
+
+| # | Assumption |
+|---|---|
+| 1 | Each row is one order line and is treated as an independent record for totals |
+| 2 | `Order Profit Per Order` is correct as recorded |
+| 3 | Quantity sold is a valid proxy for demand |
+| 4 | An order is "late" if any of its lines has actual days above scheduled days |
+| 5 | Shipping canceled rows carry no delivery performance and can be excluded |
+| 6 | A line is "loss-making" when profit is below zero; zero profit is break-even |
+| 7 | Fast, medium and slow movers are equal-sized thirds of products ranked by units |
+| 8 | Delay and profit are compared as associations; no causal assumption is made |
+| 9 | Dollar values are in the dataset's currency units (shown as $) |
 
 ---
 
-# 🚀 12. Future Enhancements
+# 🚀 12. Suggestions for Future Work
 
-Potential future improvements include:
 
-- Implementing time-series demand forecasting.
-- Developing predictive models for late delivery risk.
-- Incorporating actual inventory and warehouse stock data.
-- Performing customer demand segmentation.
-- Building an interactive Power BI dashboard.
-- Developing automated supply chain KPI monitoring.
-- Exploring machine learning techniques for delivery performance prediction.
+- Add cost, carrier and warehouse fields so that loss and delay causes can be separated.
+- Test the delay and profit relationship with a statistical test and a regression or tree model.
+- Build a delay prediction model using mode, region, product and order timing.
+- Add a demand forecast once the late-2017 gap is resolved.
+- Extend inventory analysis with stock levels, lead times and reorder points.
 
 ---
 
@@ -1068,20 +920,50 @@ https://data.mendeley.com/datasets/8gx2fvg2k6/5
 
 ---
 
-# 🎓 17. Conclusion
+## 17. Actionable Recommendations
 
-This project demonstrates how Python-based data analytics can be used to investigate supply chain operations and identify business performance issues.
+| Priority | Recommendation | Supporting evidence |
+|---|---|---|
+| 1 | **Audit First Class and Second Class carriers, or reset the promise.** Either meet the 1-day and 2-day commitments or publish realistic dates (2 and 4 days) | First Class 100% late; Second Class 79.99% late; both pay for speed |
+| 2 | **Reduce variability in Standard Class** (target a tighter 3 to 5 day window) and re-test the 4-day promise | 39.85% late on 103,153 lines; actual ranges 2 to 6 days |
+| 3 | **Fix lateness at the mode and process level first, not region by region** | Late % is 50.8% to 58.7% in every region |
+| 4 | **Use Same Day as the operational benchmark** and document what it does differently | 0% late across 9,293 lines |
+| 5 | **Run a cost-level loss investigation** (price versus product cost, shipping charge, refunds) starting with the extreme negative-profit tail | Losses are ~18% in every mode and category; discount and shipping days do not explain them |
+| 6 | **Prioritise replenishment for the top SKUs and categories**, with safety stock for Perfect Rip Deck, Dri-FIT Polo and Life Vest | 70,575, 60,232 and 55,333 units |
+| 7 | **Review the lowest-demand products before discontinuing them**, checking margin and price point | 8 to 33 units each, often premium items |
+| 8 | **Verify the Q4 2017 data drop** before using this data for forecasting | Demand falls from about 9.9k to about 2.0k units in a month |
+| 9 | **Build an SLA scorecard** by mode and region with late %, average delay and 90th percentile delay | KPIs already exist in the notebook |
+| 10 | **Standardise definitions** so orders, lines and risk percentages are never mixed | See Appendix A |
 
-By analyzing historical transactional data, the project explores product demand, inventory-related product movement, logistics performance, delivery delays, and profitability.
+The financial benefit of these actions is not quantified. Any estimate should come from a simulation that re-sets promised days or removes late shipments and recalculates the results, rather than from the Profit at Risk figure, which measures exposure and not realised loss.
 
-The findings highlight important operational and financial challenges, including a high proportion of late delivery records and the presence of loss-making transactions.
+# 🎓 18. Conclusion
 
-The analysis also demonstrates the importance of understanding product demand patterns, evaluating delivery performance, and monitoring profitability rather than relying only on sales figures.
+The DataCo data describes a business with strong, stable demand and healthy gross volume ($35.2M sales, $3.8M net profit) but a serious service problem: 54.69% of orders are delivered later than promised. The failure is concentrated in the premium services. First Class and Second Class miss their promise on 100% and 80% of orders, and Standard Class misses on about 40% because its delivery times are too variable. Because the pattern is the same in every region, the fix belongs in shipping-mode operations and promise setting.
 
-Overall, this project provides a practical application of data analytics in supply chain management and demonstrates how data-driven insights can support better operational planning, logistics decisions, and business performance improvement.
+Loss-making is a separate, equally large issue. Roughly one line in five loses money, at a nearly identical rate across shipping modes and categories, and discount and shipping time show no relationship with profit. The notebook therefore supports the business problem as two parallel inefficiencies, delivery performance and transaction profitability, and does not prove that one causes the other.
+
+The most valuable next step is better data: cost, carrier and stock fields, and a clean 2017 to 2018 record. With those, the project can move from describing where the problems are to explaining and predicting them.
 
 ---
+# Validation Notes on the Notebook
 
+While preparing this report, the notebook's written commentary was compared with its computed outputs. Please review these items, because several are visible in the notebook narrative.
+
+| # | Notebook commentary | Computed output | Used in this report |
+|---|---|---|---|
+| 1 | "172,765 orders" | 172,765 is the **line** count; unique orders are 62,897 | 62,897 orders, 172,765 lines |
+| 2 | "Total profit $7.5M, 21.3% of sales" | $7.5M is positive profit only; losses are $3.7M and net profit is $3.8M | Net profit $3.8M (about 10.8%) |
+| 3 | "32,295 loss-making records, roughly 18.7% of total orders" | 32,295 is lines (18.69%); loss-making **orders** are 4,401 | Both, labelled correctly |
+| 4 | "$2.1M in losses due to delays" | No cell computes this figure; Profit at Risk is $4.11M of positive profit | Not used |
+| 5 | Delivery risk "276.1% / 220.19% / 109.01%" | Late lines divided by unique orders, so values above 100% are not valid percentages | Order-level late % (100.00 / 79.99 / 39.85 / 0.00) |
+| 6 | Regional "variance" 0.42 to 0.62 | The chart shows late % from 50.83 to 58.66 | Chart values |
+| 7 | Top product "about 76.6k units" | Computed 70,575 units | 70,575 |
+| 8 | Country chart described as "sales exceeding 4.5M" | The chart plots demand in units (United States about 52.0k) | Units |
+| 9 | "Delay losses are about 28% of profit" | Depends on the unsupported $2.1M figure | Not used |
+| 10 | The notebook framing that discounts or shipping drive loss lines | Loss rate is flat across modes; mean discount is equal on loss and profit lines | Reported as no observed relationship |
+
+-----
 ## 👩‍💻 Author
 
 **Siniya V.H**
