@@ -920,24 +920,7 @@ https://data.mendeley.com/datasets/8gx2fvg2k6/5
 
 ---
 
-## 17. Actionable Recommendations
-
-| Priority | Recommendation | Supporting evidence |
-|---|---|---|
-| 1 | **Audit First Class and Second Class carriers, or reset the promise.** Either meet the 1-day and 2-day commitments or publish realistic dates (2 and 4 days) | First Class 100% late; Second Class 79.99% late; both pay for speed |
-| 2 | **Reduce variability in Standard Class** (target a tighter 3 to 5 day window) and re-test the 4-day promise | 39.85% late on 103,153 lines; actual ranges 2 to 6 days |
-| 3 | **Fix lateness at the mode and process level first, not region by region** | Late % is 50.8% to 58.7% in every region |
-| 4 | **Use Same Day as the operational benchmark** and document what it does differently | 0% late across 9,293 lines |
-| 5 | **Run a cost-level loss investigation** (price versus product cost, shipping charge, refunds) starting with the extreme negative-profit tail | Losses are ~18% in every mode and category; discount and shipping days do not explain them |
-| 6 | **Prioritise replenishment for the top SKUs and categories**, with safety stock for Perfect Rip Deck, Dri-FIT Polo and Life Vest | 70,575, 60,232 and 55,333 units |
-| 7 | **Review the lowest-demand products before discontinuing them**, checking margin and price point | 8 to 33 units each, often premium items |
-| 8 | **Verify the Q4 2017 data drop** before using this data for forecasting | Demand falls from about 9.9k to about 2.0k units in a month |
-| 9 | **Build an SLA scorecard** by mode and region with late %, average delay and 90th percentile delay | KPIs already exist in the notebook |
-| 10 | **Standardise definitions** so orders, lines and risk percentages are never mixed | See Appendix A |
-
-The financial benefit of these actions is not quantified. Any estimate should come from a simulation that re-sets promised days or removes late shipments and recalculates the results, rather than from the Profit at Risk figure, which measures exposure and not realised loss.
-
-# 🎓 18. Conclusion
+# 🎓 17. Conclusion
 
 The DataCo data describes a business with strong, stable demand and healthy gross volume ($35.2M sales, $3.8M net profit) but a serious service problem: 54.69% of orders are delivered later than promised. The failure is concentrated in the premium services. First Class and Second Class miss their promise on 100% and 80% of orders, and Standard Class misses on about 40% because its delivery times are too variable. Because the pattern is the same in every region, the fix belongs in shipping-mode operations and promise setting.
 
