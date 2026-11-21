@@ -42,8 +42,6 @@ This project addresses important business questions such as:
 
 The analysis will use available dataset fields to investigate these questions and develop evidence-based recommendations.
 
-**Core Business problem**
-The primary business problem is poor supply chain and delivery performance, which is causing substantial profit leakage despite strong sales and customer demand.The company has strong market demand but suffers from severe order fulfilment and logistics inefficiencies, leading to excessive delivery delays, financial losses, and a high number of loss-making transactions.Despite generating substantial sales revenue, the business faces challenges in maintaining delivery commitments, managing product demand efficiently, and ensuring that transactions remain profitable.
 
 ## 📂 Dataset Information
 
