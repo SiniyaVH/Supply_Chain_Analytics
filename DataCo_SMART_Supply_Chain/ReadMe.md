@@ -464,8 +464,7 @@ The following metrics will be calculated where the necessary fields are availabl
 | Unique orders | 62,897 | Unique `Order Id` |
 | Order lines | 172,765 | Rows after cleaning |
 | Customers | 20,261 | Unique `Customer Id` |
-| Units sold | 367,591 | Sum of `Order Item Quantity`
- |
+| Units sold | 367,591 | Sum of `Order Item Quantity |
 | Average order value | $560 | Mean of sales summed per order |
 | Average sales per line | $204 | Mean of `Sales` |
 | Positive profit | $7.5M | Sum of profit on profitable lines |
