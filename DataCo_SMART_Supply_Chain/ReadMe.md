@@ -953,7 +953,7 @@ While preparing this report, the notebook's written commentary was compared with
 Aspiring Data Analyst | Python | SQL | Power BI | Data Visualization
 
 - LinkedIn: [linkedin.com/in/siniya-v-h](https://www.linkedin.com/in/siniya-v-h)
-- GitHub: [Add your GitHub profile link]
+- GitHub: (https://github.com/SiniyaVH)]
 
 ---
 
